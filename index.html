@@ -235,14 +235,17 @@
     /* ── SHARED FLIP CARD ── */
     .flip-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(360px, 1.25fr);
       gap: 22px;
       align-items: stretch;
     }
 
-    .flip-card {
-      perspective: 1200px;
-      height: 280px;
+    .flip-card,
+    .events-card {
+      height: 260px;
+      min-height: 260px;
+      margin-right: 2px;
+      transform-origin: left center;
     }
 
     .flip-card-inner {
@@ -315,6 +318,9 @@
       line-height: 1.8;
       color: #dbeafe;
     }
+    .flip-card.motto-card {
+      margin-right: 32px;
+    }
 
     /* ── APPROACH SECTION (flip card variant) ── */
     .approach { background: white; }
@@ -379,7 +385,7 @@
 
     /* ── REST OF ORIGINAL STYLES ── */
     .foundation { background: var(--soft-bg); }
-    .foundation-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .foundation-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
     .foundation-card, .info-card, .topic-card, .panel {
       border: 1px solid var(--line);
       background: white;
@@ -437,6 +443,7 @@
       .areas-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
       .foundation-grid, .topic-grid { grid-template-columns: repeat(2, 1fr); }
       .approach-intro, .split, .contact-grid { grid-template-columns: 1fr; }
+       .flip-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     .professional-head h2 { line-height: 1.15; }
@@ -475,6 +482,134 @@
       .flip-card { height: 260px; }
       .approach-flip-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Partner STYLES ── */
+    .partners {
+      background: var(--soft-bg);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .partner-card {
+      padding: 28px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+
+      text-align: center;
+
+      transition: all 0.3s ease;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(21,87,214,0.12);
+      border-color: var(--primary);
+    }
+
+    .partner-logo {
+      width: 72px;
+      height: 72px;
+
+      margin: 0 auto 20px;
+
+      border-radius: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--primary-soft);
+
+      font-size: 2rem;
+    }
+
+    .partner-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .partner-card p {
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      .flip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ── Upcoming Events STYLES ── */
+    .events-card {
+      height: 400px;
+      min-height: 300px;
+      overflow: hidden;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(98px);
+      width: 165%;
+    }
+
+    .events-card-header {
+      position: relative;
+      z-index: 2;
+      padding: 18px 24px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .events-card-body {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      padding: 22px 24px;
+    }
+
+    .events-card-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      animation: verticalEvents 18s linear infinite;
+    }
+
+    .events-card-scroll span {
+      color: var(--primary-dark);
+      font-weight: 800;
+      line-height: 1.45;
+      font-size: 1rem;
+    }
+    
+    .events-wide {
+      grid-column: auto;
+    }
+
+    @keyframes verticalEvents {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-45%); }
+    }
+
   </style>
 </head>
 <body>
@@ -562,6 +697,18 @@
               <div class="flip-card-face flip-card-back"><h3>Motto</h3><p>Learn. Connect. Grow. Knowledge becomes stronger when shared with the community.</p></div>
             </div>
           </article>
+          <article class="events-card events-wide">
+          <div class="events-card-header">Upcoming Events</div>
+          <div class="events-card-body">
+            <div class="events-card-scroll">
+              <span>☁️ Cloud Basics Session • Coming Soon</span>
+              <span>🔗 API Workshop • Coming Soon</span>
+              <span>📋 Jira & Confluence • Coming Soon</span>
+              <span>⚡ MuleSoft Meetup • Coming Soon</span>
+              <span>🎓 Career Mentorship • Coming Soon</span>
+            </div>
+          </div>
+        </article>
         </div>
       </div>
     </section>
@@ -620,7 +767,6 @@
         <!-- Intro banner + hint -->
         <div class="approach-intro">
           <div class="approach-main-block">
-            <div class="kicker" style="color:#93c5fd;">Our approach</div>
             <h2>Simple, practical and community-driven.</h2>
             <p>We use real-world examples and beginner-friendly learning to help people understand how technology works in practice.</p>
           </div>
@@ -780,7 +926,6 @@
     <section id="team" class="team">
       <div class="container split">
         <article class="panel">
-          <div class="kicker">Team</div>
           <h2>Built by community-minded professionals</h2>
           <p>Supported by technology professionals, mentors, collaborators and volunteers.</p>
           <div class="team-list">
@@ -790,7 +935,6 @@
           </div>
         </article>
         <article id="volunteer" class="panel volunteer">
-          <div class="kicker" style="color:#dbeafe">Volunteer</div>
           <h2 style="color:white">Volunteer with us</h2>
           <p>Contribute knowledge, skills and time to support community-based technology learning.</p>
           <a class="btn btn-secondary" href="#contact">Become a Volunteer →</a>
@@ -798,10 +942,45 @@
       </div>
     </section>
 
+    <section id="partners" class="partners">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <h2>Our Community Partners</h2>
+          </div>
+        </div>
+
+        <div class="partners-grid">
+
+          <article class="partner-card">
+            <div class="partner-logo">🤝</div>
+            <h3>Community Placeholder</h3>
+          </article>
+
+          <article class="partner-card">
+            <div class="partner-logo">🎓</div>
+            <h3>Community Placeholder</h3>
+          </article>
+
+          <article class="partner-card">
+            <div class="partner-logo">💼</div>
+            <h3>Community Placeholder</h3>
+          </article>
+
+          <article class="partner-card">
+            <div class="partner-logo">🌏</div>
+            <h3>Community Placeholder</h3>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <div class="container contact-grid">
         <div>
-          <div class="kicker">Contact</div>
           <h2>Connect with TechConnect Learning Hub</h2>
           <p>Reach out for collaboration, volunteering, workshops, mentoring, or community initiatives.</p>
         </div>
@@ -822,6 +1001,9 @@
         <a class="btn btn-secondary" href="#contact">Start a Conversation →</a>
       </div>
     </section>
+
+    
+
   </main>
 
   <footer>
