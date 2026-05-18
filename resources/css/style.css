@@ -598,9 +598,14 @@ img {
       }
     }
     /* ── Upcoming Events STYLES ── */
+    .main-events {
+      width: 100%;
+      margin-top: 42px;
+    }
     .events-card {
-      height: 400px;
-      min-height: 300px;
+      width: 100%;
+      height: 360px;
+      min-height: 260px;
       overflow: hidden;
       border-radius: 24px;
       background: white;
@@ -608,13 +613,10 @@ img {
       box-shadow: 0 14px 36px rgba(15,23,42,0.08);
       display: flex;
       flex-direction: column;
-      transform: translateX(98px);
-      width: 165%;
+      transform: none;
     }
 
     .events-card-header {
-      position: relative;
-      z-index: 2;
       padding: 18px 24px;
       background: linear-gradient(90deg, var(--primary), var(--primary-dark));
       color: white;
@@ -643,6 +645,16 @@ img {
       font-weight: 800;
       line-height: 1.45;
       font-size: 1rem;
+    }
+
+    @keyframes verticalEvents {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
     }
 
     /* ── Content STYLES ── */
@@ -822,81 +834,9 @@ img {
       }
     }
 
-    /* ─────────────────────────────────────────
-   Upcoming Events Section
-   Fixed alignment version
-   ───────────────────────────────────────── */
 
-    .main-events {
-      width: 100%;
-      margin-top: 42px;
-    }
 
-    .events-card {
-      width: 100%;
-      overflow: hidden;
 
-      border-radius: 24px;
-      background: white;
-      border: 1px solid var(--line);
 
-      box-shadow: 0 14px 36px rgba(15,23,42,0.08);
 
-      display: flex;
-      flex-direction: column;
 
-      /* Remove old broken alignment */
-      transform: none;
-
-      /* Better responsive sizing */
-      height: auto;
-      min-height: 260px;
-    }
-
-    .events-card-header {
-      padding: 18px 24px;
-
-      background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--primary-dark)
-      );
-
-      color: white;
-
-      font-size: 0.95rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-
-      text-transform: uppercase;
-    }
-
-    .events-card-body {
-      padding: 26px 28px;
-    }
-
-    .events-card-scroll {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-
-      /* restore scrolling */
-      animation: verticalEvents 18s linear infinite;
-    }
-
-    @keyframes verticalEvents {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(-50%);
-      }
-    }
-
-    .events-card-scroll span {
-      color: var(--primary-dark);
-      font-weight: 800;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
