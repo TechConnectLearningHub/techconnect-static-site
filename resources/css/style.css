@@ -269,11 +269,27 @@ img {
       align-items: stretch;
     }
 
+    /* ============================================
+   FOUNDATION SECTION CARDS
+   ============================================
+
+   Applies consistent height sizing for:
+   - Flip cards
+   - Upcoming events card
+
+   Notes:
+   - Fixed height ensures alignment consistency
+   - transform-origin improves animation behavior
+   - small right margin creates spacing between cards
+   ============================================ */
+
     .flip-card,
     .events-card {
-      height: 260px;
-      min-height: 260px;
-      margin-right: 2px;
+      height: 260px;          /* Fixed card height */
+      min-height: 260px;      /* Prevent shrinking */
+      margin-right: 2px;      /* Small spacing between cards */
+
+      /* Animation anchor point */
       transform-origin: left center;
     }
 
@@ -629,15 +645,6 @@ img {
       line-height: 1.45;
       font-size: 1rem;
     }
-    
-    .events-wide {
-      grid-column: auto;
-    }
-
-    @keyframes verticalEvents {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-45%); }
-    }
 
     /* ── Content STYLES ── */
     .content-section {
@@ -814,4 +821,73 @@ img {
         align-items: center;
         justify-content: center;
       }
+    }
+
+    /* ─────────────────────────────────────────
+   Upcoming Events Section
+   Fixed alignment version
+   ───────────────────────────────────────── */
+
+    .main-events {
+      width: 100%;
+      margin-top: 42px;
+    }
+
+    .events-card {
+      width: 100%;
+      overflow: hidden;
+
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+
+      box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+
+      display: flex;
+      flex-direction: column;
+
+      /* Remove old broken alignment */
+      transform: none;
+
+      /* Better responsive sizing */
+      height: auto;
+      min-height: 260px;
+    }
+
+    .events-card-header {
+      padding: 18px 24px;
+
+      background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-dark)
+      );
+
+      color: white;
+
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+    .events-card-body {
+      padding: 26px 28px;
+    }
+
+    .events-card-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      /* restore scrolling */
+      animation: verticalEvents 18s linear infinite;
+    }
+
+    .events-card-scroll span {
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.5;
     }
