@@ -87,6 +87,30 @@ document.addEventListener("DOMContentLoaded", async function () {
   initialiseAccordions();
   initialiseMobileMenu();
 
+  /* ============================================
+   HANDLE DIRECT URL HASHES
+   ============================================
+
+   Example:
+   /#contact
+   /#mission
+
+   Waits briefly for dynamically loaded sections
+   before opening and scrolling.
+   ============================================ */
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash) {
+
+      setTimeout(() => {
+
+        // Open matching section dynamically
+        openSection(hash);
+
+      }, 250);
+
+    }
+
 });
 
 /**
