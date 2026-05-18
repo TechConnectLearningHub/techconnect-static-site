@@ -626,17 +626,16 @@ img {
     }
 
     .events-card-body {
-      position: relative;
-      flex: 1;
+      height: 160px;
       overflow: hidden;
-      padding: 22px 24px;
+      padding: 26px 28px;
     }
 
     .events-card-scroll {
       display: flex;
       flex-direction: column;
       gap: 24px;
-      animation: verticalEvents 18s linear infinite;
+      animation: verticalEvents 14s linear infinite;
     }
 
     .events-card-scroll span {
@@ -883,6 +882,16 @@ img {
 
       /* restore scrolling */
       animation: verticalEvents 18s linear infinite;
+    }
+
+    @keyframes verticalEvents {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
     }
 
     .events-card-scroll span {
