@@ -1,60 +1,220 @@
 <!-- ============================================
      AREAS SECTION: Technology Learning Areas
      ============================================
-     
-     Showcase of key technology areas and topics
-     covered by TechConnect Learning Hub.
-     
-     Features: Interactive technology area cards
+
+     Purpose:
+     Displays the major technology learning domains
+     offered by TechConnect Learning Hub.
+
+     Features:
+     - Hero heading with CTA buttons
+     - Responsive technology cards grid
+     - Clickable cards linked to Topics section
+     - Professional community-learning presentation
+
+     Navigation:
+     Each card opens the Topics section dynamically
+     using the openSection() JavaScript function.
      ============================================ -->
+
 <section id="areas" class="areas">
+
+  <!-- Main Layout Container -->
   <div class="container areas-layout">
 
-    <!-- Section Header with CTA Buttons -->
+    <!-- ============================================
+         SECTION HEADER / HERO CONTENT
+         ============================================ -->
     <div class="section-head professional-head hero-copy">
-      <div class="eyebrow">Community-driven ICT learning</div>
 
-      <!-- Navigation Buttons to Other Sections -->
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#areas">Explore Areas</a>
-        <a class="btn btn-secondary" href="javascript:void(0)" onclick="openSection('mission')">Our Mission</a>
-        <a class="btn btn-secondary" href="javascript:void(0)" onclick="openSection('values')">Our Values</a>
-        <a class="btn btn-secondary" href="javascript:void(0)" onclick="openSection('approach')">Our Approach</a>
-        <a class="btn btn-secondary" href="javascript:void(0)" onclick="openSection('audience')">Our Audience</a>
+      <!-- Small Highlight Label -->
+      <div class="eyebrow">
+        Community-driven ICT learning
       </div>
 
+      <!-- ============================================
+           CALL-TO-ACTION BUTTONS
+           ============================================
+
+           Primary:
+           - Explore current learning areas
+
+           Secondary:
+           - Opens additional information sections
+           dynamically without page reload
+           ============================================ -->
+      <div class="hero-actions">
+
+        <!-- Primary Button -->
+        <a class="btn btn-primary" href="#areas">
+          Explore Areas
+        </a>
+
+        <!-- Secondary Buttons -->
+        <a class="btn btn-secondary"
+           href="javascript:void(0)"
+           onclick="openSection('mission')">
+          Our Mission
+        </a>
+
+        <a class="btn btn-secondary"
+           href="javascript:void(0)"
+           onclick="openSection('values')">
+          Our Values
+        </a>
+
+        <a class="btn btn-secondary"
+           href="javascript:void(0)"
+           onclick="openSection('approach')">
+          Our Approach
+        </a>
+
+        <a class="btn btn-secondary"
+           href="javascript:void(0)"
+           onclick="openSection('audience')">
+          Our Audience
+        </a>
+
+      </div>
+
+      <!-- Main Heading -->
       <h2>
-        Empowering Practical <span class="blue">Technology Learning</span>
+        Empowering Practical
+        <span class="blue">Technology Learning</span>
       </h2>
+
     </div>
 
-    <!-- Technology Area Cards Grid -->
+    <!-- ============================================
+         TECHNOLOGY AREAS GRID
+         ============================================
+
+         Displays interactive image cards for:
+         - Cloud Computing
+         - Jira & Confluence
+         - API Integration
+         - Business Analysis
+         - MuleSoft
+
+         All cards redirect users to Topics section.
+         ============================================ -->
     <div class="areas-grid">
-      <!-- Cloud Computing -->
-      <a class="cloud-card" href="javascript:void(0)" onclick="openSection('topics')">
-        <img src="./resources/images/cloud-computing.jpg" alt="Cloud Computing">
+
+      <!-- ============================================
+           CARD 1: Cloud Computing
+           ============================================ -->
+      <a class="cloud-card"
+         href="javascript:void(0)"
+         onclick="openSection('topics')">
+
+        <img
+          src="./resources/images/cloud-computing.jpg"
+          alt="Cloud Computing">
       </a>
 
-      <!-- Jira & Confluence -->
-      <a class="cloud-card" href="javascript:void(0)" onclick="openSection('topics')">
-        <img src="./resources/images/JIRA&Confluence.jpg" alt="Jira & Confluence">
+      <!-- ============================================
+           CARD 2: Jira & Confluence
+           ============================================ -->
+      <a class="cloud-card"
+         href="javascript:void(0)"
+         onclick="openSection('topics')">
+
+        <img
+          src="./resources/images/JIRA&Confluence.jpg"
+          alt="Jira & Confluence">
       </a>
 
-      <!-- API & Integration -->
-      <a class="cloud-card" href="javascript:void(0)" onclick="openSection('topics')">
-        <img src="./resources/images/API&Integration.jpg" alt="API & Integration">
+      <!-- ============================================
+           CARD 3: API & Integration
+           ============================================ -->
+      <a class="cloud-card"
+         href="javascript:void(0)"
+         onclick="openSection('topics')">
+
+        <img
+          src="./resources/images/API&Integration.jpg"
+          alt="API & Integration">
       </a>
 
-      <!-- Business Analyst -->
-      <a class="cloud-card" href="javascript:void(0)" onclick="openSection('topics')">
-        <img src="./resources/images/Business Analyst.jpg" alt="Business Analyst">
+      <!-- ============================================
+           CARD 4: Business Analyst
+           ============================================ -->
+      <a class="cloud-card"
+         href="javascript:void(0)"
+         onclick="openSection('topics')">
+
+        <img
+          src="./resources/images/Business Analyst.jpg"
+          alt="Business Analyst">
       </a>
 
-      <!-- MuleSoft -->
-      <a class="cloud-card" href="javascript:void(0)" onclick="openSection('topics')">
-        <img src="./resources/images/MuleSoft.jpg" alt="MuleSoft Anypoint Cloud Hub">
+      <!-- ============================================
+           CARD 5: MuleSoft
+           ============================================ -->
+      <a class="cloud-card"
+         href="javascript:void(0)"
+         onclick="openSection('topics')">
+
+        <img
+          src="./resources/images/MuleSoft.jpg"
+          alt="MuleSoft Anypoint Cloud Hub">
       </a>
+
     </div>
+
+    <!-- ============================================
+         UPCOMING EVENTS SECTION
+         ============================================
+
+         Positioned below technology cards.
+
+         Purpose:
+         Highlights upcoming community learning
+         sessions, workshops, and mentorship events.
+
+         Future Enhancement Ideas:
+         - Auto-scrolling carousel
+         - Dynamic API-based event loading
+         - Registration buttons
+         - Event countdown timer
+         ============================================ -->
+    <section class="events-card events-wide main-events">
+
+      <!-- Events Header -->
+      <div class="events-card-header">
+        📅 UPCOMING EVENTS
+      </div>
+
+      <!-- Events Body -->
+      <div class="events-card-body">
+
+        <!-- Events List -->
+        <div class="events-card-scroll">
+
+          <span>
+            ☁️ Cloud Basics Session • Coming Soon
+          </span>
+
+          <span>
+            🔗 API Workshop • Coming Soon
+          </span>
+
+          <span>
+            📋 Jira &amp; Confluence • Coming Soon
+          </span>
+
+          <span>
+            ⚡ MuleSoft Meetup • Coming Soon
+          </span>
+
+          <span>
+            🎓 Career Mentorship • Coming Soon
+          </span>
+
+        </div>
+      </div>
+
+    </section>
 
   </div>
 </section>
