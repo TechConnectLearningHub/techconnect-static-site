@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechConnect Learning Hub</title>
+  <meta name="description" content="TechConnect Learning Hub is a community-driven ICT learning initiative for practical digital and enterprise skills." />
+  <style>
+    :root {
+      --primary: #1557d6;
+      --primary-dark: #0f3f9f;
+      --primary-soft: #eef5ff;
+      --ink: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --bg: #ffffff;
+      --soft-bg: #f8fbff;
+      --radius: 18px;
+      --shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .tech-dark {
+      color: #0f172a;
+    }
+
+    .tech-blue {
+      color: #1557d6;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f97316;
+      line-height: 1;
+      text-align: center;
+    }
+
+    nav { display: flex; align-items: center; gap: 22px; font-weight: 750; color: var(--ink); font-size: 0.94rem; }
+    nav a { padding: 8px 0; border-bottom: 2px solid transparent; }
+    nav a:hover, nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .header-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 12px;
+      font-weight: 850;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .header-cta, .btn-primary { background: var(--primary); color: white; box-shadow: 0 12px 28px rgba(21,87,214,0.22); }
+    .btn-secondary { background: white; color: var(--primary); border-color: rgba(21,87,214,0.28); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero {
+      background: #f8fbff;
+      border-bottom: 1px solid var(--line);
+      overflow: visible;
+      position: relative;
+      padding: 0;
+    }
+
+    .hero::before {
+      display: none;
+    }
+
+    .hero::after {
+      display: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      min-height: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 32px;
+      padding: 56px 0;
+    }
+
+    @supports (gap: max(32px)) {
+      .hero-grid {
+        gap: max(32px, 2vw);
+      }
+    }
+
+    .hero-copy {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(238,245,255,0.95);
+      color: var(--primary-dark);
+      border: 1px solid rgba(21,87,214,0.15);
+      font-size: 0.86rem;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.055em;
+      margin-bottom: 20px;
+      color: var(--ink);
+      max-width: 100%;
+    }
+
+    .blue { color: var(--primary); }
+    .hero-copy p { color: var(--text); font-size: clamp(1rem, 1.3vw, 1.2rem); max-width: 85%; margin-bottom: 32px; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 100%;
+      width: 100%;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .point {
+      padding: 20px 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-bottom: none;
+    }
+
+    .point:last-child { 
+      border-bottom: none;
+      padding-bottom: 20px;
+    }
+    .point strong { display: block; font-size: 1rem; color: var(--ink); font-weight: 700; margin-bottom: 6px; }
+    .point span { display: block; color: var(--muted); font-size: 0.9rem; }
+
+    .hero-image {
+      display: block;
+      min-height: 500px;
+      background: url('./resources/images/techconnect-cover.jpg') center / cover no-repeat;
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    section { padding: 64px 0; }
+    .section-head { max-width: 760px; margin-bottom: 50px; }
+    .kicker { color: var(--primary); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 900; font-size: 0.82rem; margin-bottom: 12px; }
+    h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); line-height: 1.1; letter-spacing: -0.045em; color: var(--ink); margin-bottom: 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; line-height: 1.6; }
+    
+
+    .areas { background: white; padding: 90px 0; }
+    .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .area-card {
+      min-height: 160px;
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+      box-shadow: 0 4px 16px rgba(15,23,42,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .area-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(21,87,214,0.15);
+      border-color: var(--primary);
+    }
+    .area-card span { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; }
+    .area-card strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .cloud-card {
+      height: 320px;
+      min-height: 320px;
+      padding: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 4px 16px rgba(15,23,42,0.08);
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .cloud-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(21,87,214,0.15);
+      border-color: var(--primary);
+    }
+
+    .cloud-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .areas-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .areas {
+      padding: 48px 0;
+    }
+
+    .professional-head {
+      margin-bottom: 0;
+    }
+
+    .professional-head h2 {
+      margin-bottom: 12px;
+    }
+
+    .professional-head p {
+      margin-bottom: 0;
+      max-width: 760px;
+    }
+
+    .areas-grid {
+      margin-top: 8px;
+    }
+    /* FOUNDATION FLIP CARDS */
+
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .flip-card {
+      perspective: 1200px;
+      height: 280px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.7s ease;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-face {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      padding: 32px;
+      border-radius: 24px;
+
+      background: #ffffff;
+      border: 1px solid var(--line);
+
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbff 100%
+      );
+    }
+
+    .flip-card-front .icon {
+      width: 72px;
+      height: 72px;
+
+      border-radius: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(21, 87, 214, 0.08);
+
+      font-size: 2rem;
+
+      margin-bottom: 22px;
+    }
+
+    .flip-card-front h3,
+    .flip-card-back h3 {
+      font-size: 1.5rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #eef5ff 100%
+      );
+    }
+
+    .flip-card-back p {
+      margin-top: 18px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1024px) {
+      .flip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .flip-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flip-card {
+        height: 260px;
+      }
+    }
+
+  
+  }
+
+    .foundation { background: var(--soft-bg); }
+    .foundation-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .foundation-card, .info-card, .topic-card, .panel {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(15,23,42,0.05);
+    }
+    .foundation-card { padding: 26px; min-height: 245px; }
+    .icon { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font-size: 1.35rem; margin-bottom: 16px; }
+    h3 { font-size: 1.12rem; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .foundation-card p, .info-card p, .topic-card p, .panel p { color: var(--text); font-size: 0.96rem; }
+
+    .values-grid, .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .info-card { padding: 24px; }
+
+    .approach { background: white; }
+    .approach-wrap { display: grid; grid-template-columns: minmax(350px, 45%) 1fr; gap: 24px; align-items: stretch; }
+    .approach-main { padding: 34px; background: var(--primary); color: white; border-radius: var(--radius); }
+    .approach-main h2 { color: white; }
+    .approach-main p { color: #dbeafe; margin-top: 14px; }
+    .approach-steps { display: grid; gap: 14px; }
+    .step { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: white; display: grid; grid-template-columns: 38px 1fr; gap: 14px; }
+    .step-num { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font-weight: 900; }
+    .step p { color: var(--muted); font-size: 0.94rem; }
+
+    .topics { background: var(--soft-bg); }
+    .topic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .topic-card { padding: 22px; min-height: 150px; text-align: center;}
+    .topic-card h3 {
+      text-align: center;
+      position: relative;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .topic-card h3::after {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background: var(--primary);
+      display: block;
+      margin-top: 12px;
+      border-radius: 999px;
+    }
+    .team { background: white; }
+    .split { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 20px; }
+    .panel { padding: 30px; }
+    .team-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .team-item { padding: 18px; border-radius: 16px; background: var(--primary-soft); border: 1px solid #dbeafe; }
+    .team-item p { color: var(--text); font-size: 0.9rem; }
+    .volunteer { background: var(--primary); color: white; border: none; }
+    .volunteer p { color: #dbeafe; margin-bottom: 20px; }
+
+    .contact { background: var(--soft-bg); }
+    .contact-grid { display: grid; grid-template-columns: minmax(350px, 45%) 1fr; gap: 22px; align-items: start; }
+    .contact-row { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--text); }
+    .contact-row:last-child { border-bottom: none; }
+
+    .cta { background: var(--primary); color: white; text-align: center; }
+    .cta h2 { color: white; }
+    .cta p { color: #dbeafe; max-width: 680px; margin: 14px auto 26px; }
+
+    footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.92rem; }
+
+    @media (max-width: 1100px) {
+      nav { display: none; }
+      .hero-grid { grid-template-columns: 1fr; min-height: auto; padding: 48px 0; gap: 28px; }
+      .hero-copy { max-width: 100%; }
+      h1 { font-size: clamp(1.7rem, 3.2vw, 2.8rem); max-width: 100%; }
+      .hero-copy p { max-width: 90%; }
+      .hero-image { min-height: 400px; }
+      .areas-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+      .foundation-grid, .topic-grid { grid-template-columns: repeat(2, 1fr); }
+      .approach-wrap, .split, .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .professional-head h2 {
+      line-height: 1.15;
+    }
+
+    @media (min-width: 900px) {
+      .professional-head h2 {
+        white-space: nowrap;
+      }
+    }
+
+    .professional-head {
+      max-width: 100%;
+    }
+
+    .professional-head p {
+      max-width: 780px;
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav { height: 68px; }
+      .brand-title, .brand-subtitle { display: none; }
+      .brand { min-width: auto; }
+      .brand img { width: 46px; height: 46px; }
+      .header-cta { min-height: 40px; padding: 0 14px; font-size: 0.9rem; }
+      .hero { padding: 0; }
+      .hero-image { min-height: 300px; }
+      .hero-grid { min-height: auto; padding: 36px 0 28px; gap: 20px; }
+      h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); max-width: 100%; }
+      .hero-copy p { max-width: 100%; font-size: 1rem; }
+      .hero-points { grid-template-columns: 1fr; gap: 16px; }
+      .point { padding: 16px 0; border-bottom: none; }
+      .point:last-child { border-bottom: none; padding-bottom: 16px; }
+      .hero-points, .areas-grid, .foundation-grid, .values-grid, .audience-grid, .topic-grid, .team-list { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+      .btn { width: 100%; }
+      section { padding: 64px 0; }
+      .section-head { margin-bottom: 32px; }
+      .area-card { min-height: 140px; padding: 20px; }
+      .approach-steps { gap: 12px; }
+    }
+
+    @media (max-width: 900px) {
+      .foundation-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid, .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="./resources/images/techconnect-logo.jpg" alt="TechConnect Learning Hub logo" />
+
+        <div class="brand-text">
+          <div class="brand-title">
+            <span class="tech-dark">Tech</span><span class="tech-blue">Connect</span>
+          </div>
+
+          <div class="brand-subtitle">Learning Hub</div>
+        </div>
+      </a>
+      <nav>
+        <a class="active" href="#home">Home</a>
+        <a href="#mission">Mission</a>
+        <a href="#values">Values</a>
+        <a href="#areas">Areas</a>
+        <a href="#topics">Topics</a>
+        <a href="#team">Team</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="#contact">Contact Us</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-image" aria-label="TechConnect community learning cover image"></div>
+    </section>
+
+    <section id="areas" class="areas">
+  <div class="container areas-layout">
+
+    <div class="section-head professional-head hero-copy">
+      <div class="eyebrow">Community-driven ICT learning</div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#areas">Explore Areas</a>
+        <a class="btn btn-secondary" href="#mission">Our Mission</a>
+        <a class="btn btn-secondary" href="#values">Our Values</a>
+        <a class="btn btn-secondary" href="#approach">Our Approach</a>
+        <a class="btn btn-secondary" href="#audience">Our Audience</a>
+      </div>
+
+        <h2>
+          Empowering Practical
+          <span class="blue">Technology Learning</span>
+        </h2>
+
+    </div>
+        <div class="areas-grid">
+          <a class="cloud-card" href="#topics">
+            <img src="./resources/images/cloud-computing.jpg" alt="Cloud Computing">
+          </a>  
+
+          <a class="cloud-card" href="#topics">
+            <img src="./resources/images/JIRA&Confluence.jpg" alt="Jira & Confluence">
+          </a> 
+
+          <a class="cloud-card" href="#topics">
+            <img src="./resources/images/API&Integration.jpg" alt="API & Integration">
+          </a>  
+
+           <a class="cloud-card" href="#topics">
+            <img src="./resources/images/Business Analyst.jpg" alt="Business Analyst">
+          </a>
+
+          <a class="cloud-card" href="#topics">
+            <img src="./resources/images/MuleSoft.jpg" alt="MuleSoft Anypoint Cloud Hub">
+          </a>  
+
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="foundation">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Mission, vision and purpose</h2></div>
+          <p>Clear principles that define why TechConnect Learning Hub exists and how it serves the community.</p>
+        </div>
+        <div class="foundation-grid flip-grid">
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🎯</div>
+                <h3>Mission</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Mission</h3>
+                <p>To empower individuals and communities through accessible, practical, and inclusive ICT learning.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">👁️</div>
+                <h3>Vision</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Vision</h3>
+                <p>To become a trusted community learning hub that inspires growth and digital confidence.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">👥</div>
+                <h3>Purpose</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Purpose</h3>
+                <p>To bring practical technology knowledge closer to people who need it most.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">⭐</div>
+                <h3>Motto</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Motto</h3>
+                <p>Learn. Connect. Grow. Knowledge becomes stronger when shared with the community.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Community-first values</h2></div>
+          <p>Our values guide how we teach, collaborate and support learners.</p>
+        </div>
+       <div class="values-grid flip-grid">
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">🌍</div>
+              <h3>Inclusivity</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Inclusivity</h3>
+              <p>We welcome learners from all backgrounds and experience levels.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">🧭</div>
+              <h3>Accessibility</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Accessibility</h3>
+              <p>We make technology learning approachable and available.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">🤝</div>
+              <h3>Collaboration</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Collaboration</h3>
+              <p>We grow through mentoring, teamwork and shared learning.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">💡</div>
+              <h3>Simplicity</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Simplicity</h3>
+              <p>We explain complex topics in clear and practical ways.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">🚀</div>
+              <h3>Empowerment</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Empowerment</h3>
+              <p>We help people build confidence and digital capability.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="icon">❤️</div>
+              <h3>Impact</h3>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <h3>Impact</h3>
+              <p>We use learning to create positive community outcomes.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section id="approach" class="approach">
+      <div class="container approach-wrap">
+        <div class="approach-main"><h2>Simple, practical and community-driven.</h2><p>We use real-world examples and beginner-friendly learning to help people understand how technology works in practice.</p></div>
+        <div class="approach-steps">
+          <article class="step"><div class="step-num">1</div><div><h3>Keep it simple</h3><p>Clear explanations without unnecessary technical complexity.</p></div></article>
+          <article class="step"><div class="step-num">2</div><div><h3>Make it practical</h3><p>Examples based on how tools are used in real IT environments.</p></div></article>
+          <article class="step"><div class="step-num">3</div><div><h3>Learn together</h3><p>Mentoring, peer learning and collaborative knowledge sharing.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+        <div class="section-head"><div><h2>We support</h2></div><p>People who want to understand, enter, or grow within the technology space.</p></div>
+       
+        <div class="audience-grid flip-grid">
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🎓</div>
+                <h3>Students</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Students</h3>
+                <p>Exploring IT, technology careers and digital foundations.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🌏</div>
+                <h3>Migrants</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Migrants</h3>
+                <p>Seeking exposure to Australian technology environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🔄</div>
+                <h3>Career Changers</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Career Changers</h3>
+                <p>Transitioning into ICT with clear beginner guidance.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🖥️</div>
+                <h3>Entry-Level Learners</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Entry-Level Learners</h3>
+                <p>Understanding how IT works in business environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🚀</div>
+                <h3>Upskillers</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Upskillers</h3>
+                <p>Broadening technical and enterprise knowledge.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🏘️</div>
+                <h3>Community Members</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Community Members</h3>
+                <p>Accessing technology knowledge through community learning.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics" class="topics">
+      <div class="container">
+        <div class="section-head">
+        <div><h2>Practical technology skills</h2></div><p>Topics can grow with the community while staying focused on practical digital and enterprise skills.</p></div>
+
+       <div class="topic-grid flip-grid">
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🖥️</div>
+                <h3>Software Fundamentals</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Software Fundamentals</h3>
+                <p>Build understanding of basic software concepts, systems, and technologies used across modern IT environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🔄</div>
+                <h3>Agile & DevOps</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Agile & DevOps</h3>
+                <p>Learn agile ways of working, team collaboration, and modern software delivery practices used in IT environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">📋</div>
+                <h3>Jira & Confluence</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Jira & Confluence</h3>
+                <p>Learn project collaboration, documentation, and agile workflow tools widely used in modern IT teams.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">☁️</div>
+                <h3>Cloud Computing</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Cloud Computing</h3>
+                <p>Learn cloud basics, platforms, and core concepts to build confidence for IT careers and future technology growth.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🔗</div>
+                <h3>APIs & Integration</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>APIs & Integration</h3>
+                <p>Understand APIs, system connectivity, and integration basics used to connect applications and enterprise platforms.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">⚡</div>
+                <h3>MuleSoft</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>MuleSoft</h3>
+                <p>Learn MuleSoft basics, API-led connectivity, and integration concepts used in modern enterprise environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">📊</div>
+                <h3>Business Analysis</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Business Analysis</h3>
+                <p>Understand business analysis fundamentals, requirements gathering, and communication skills used in IT projects.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front">
+                <div class="icon">🤝</div>
+                <h3>Workshops & Mentorship</h3>
+              </div>
+              <div class="flip-card-face flip-card-back">
+                <h3>Workshops & Mentorship</h3>
+                <p>Participate in community learning sessions, mentorship, and practical knowledge-sharing opportunities.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="team">
+      <div class="container split">
+        <article class="panel"><div class="kicker">Team</div><h2>Built by community-minded professionals</h2><p>Supported by technology professionals, mentors, collaborators and volunteers.</p><div class="team-list"><div class="team-item"><h3>Founder</h3><p>Leads vision and learning initiatives.</p></div><div class="team-item"><h3>Collaborators</h3><p>Share real-world insights.</p></div><div class="team-item"><h3>Mentors</h3><p>Support practical learning.</p></div></div></article>
+        <article id="volunteer" class="panel volunteer"><div class="kicker" style="color:#dbeafe">Volunteer</div><h2 style="color:white">Volunteer with us</h2><p>Contribute knowledge, skills and time to support community-based technology learning.</p><a class="btn btn-secondary" href="#contact">Become a Volunteer →</a></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div><div class="kicker">Contact</div><h2>Connect with TechConnect Learning Hub</h2><p>Reach out for collaboration, volunteering, workshops, mentoring, or community initiatives.</p></div>
+        <article class="panel"><div class="contact-row"><strong>Email:</strong> hello@techconnectlearninghub.org</div><div class="contact-row"><strong>Location:</strong> Melbourne, Australia</div><div class="contact-row"><strong>Community:</strong> TechConnect Learning Hub</div><br /><a class="btn btn-primary" href="mailto:hello@techconnectlearninghub.org">Email Us →</a></article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container"><h2>Building digital skills together.</h2><p>Making technology knowledge easier to access, easier to understand, and easier to apply.</p><a class="btn btn-secondary" href="#contact">Start a Conversation →</a></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div>© 2026 TechConnect Learning Hub</div><div>Learn. Connect. Grow.</div></div></footer>
+</body>
+</html>
