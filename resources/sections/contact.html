@@ -1,99 +1,184 @@
-<!-- ============================================
+<!-- =========================================================
      CONTACT SECTION: Connection & Support
-     ============================================
-     
-     Contact information and ways to connect with
-     TechConnect Learning Hub for collaboration,
-     volunteering, or learning support.
-     
-     Features: Contact form, email, location info
-     ============================================ -->
-<details id="contact" class="content-section contact">
+========================================================= -->
+<!--
+  Purpose:
+  Provides contact details and connection options
+  for learners, volunteers, partners, and community
+  collaborators.
+
+  Includes:
+  - Community connection message
+  - Contact highlights
+  - Email/location details
+  - Contact action buttons
+
+  Note:
+  Uses data-section instead of inline onclick
+  for better security and cleaner JavaScript handling.
+-->
+
+<details id="contact"
+         class="content-section contact">
+
+  <!-- =====================================================
+       ACCORDION HEADER
+  ====================================================== -->
   <summary class="section-toggle">
-    <span>Contact & Community Connection</span>
-    <span class="toggle-icon">⌵</span>
+
+    <!-- Section title -->
+    <span>
+      Contact &amp; Community Connection
+    </span>
+
+    <!-- Expand/collapse icon -->
+    <span class="toggle-icon">
+      ⌵
+    </span>
+
   </summary>
 
+  <!-- =====================================================
+       SECTION CONTENT
+  ====================================================== -->
   <div class="section-content">
+
     <div class="container contact-grid">
 
-      <!-- Contact Information Column -->
+      <!-- =================================================
+           CONTACT INTRODUCTION COLUMN
+      ================================================== -->
       <div>
+
+        <!-- Intro message -->
         <p>
           Reach out for collaboration, volunteering, workshops,
           mentoring, partnerships, or community initiatives.
         </p>
 
-        <!-- Contact Highlight Cards -->
+        <!-- =============================================
+             CONTACT HIGHLIGHT CARDS
+        ============================================== -->
         <div class="contact-highlights">
+
+          <!-- Highlight 1 -->
           <div class="contact-highlight">
             <span>🤝</span>
             <p>Community Collaboration</p>
           </div>
 
+          <!-- Highlight 2 -->
           <div class="contact-highlight">
             <span>🎓</span>
             <p>Learning Support</p>
           </div>
 
+          <!-- Highlight 3 -->
           <div class="contact-highlight">
             <span>🚀</span>
             <p>Career Growth</p>
           </div>
+
         </div>
+
       </div>
 
-      <!-- Contact Details Panel -->
+      <!-- =================================================
+           CONTACT DETAILS PANEL
+      ================================================== -->
       <article class="panel contact-panel">
-        <!-- Email -->
+
+        <!-- Email row -->
         <div class="contact-row">
           <strong>Email:</strong>
           hello@techconnectlearninghub.org
         </div>
 
-        <!-- Location -->
+        <!-- Location row -->
         <div class="contact-row">
           <strong>Location:</strong>
           Melbourne, Australia
         </div>
 
-        <!-- Community -->
+        <!-- Community row -->
         <div class="contact-row">
           <strong>Community:</strong>
           TechConnect Learning Hub
         </div>
 
-        <!-- Action Buttons -->
+        <!-- =============================================
+             CONTACT ACTION BUTTONS
+        ============================================== -->
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:hello@techconnectlearninghub.org">
+
+          <!-- Opens user's email client -->
+          <a class="btn btn-primary"
+             href="mailto:hello@techconnectlearninghub.org">
+
             Email Us →
+
           </a>
 
-          <a class="btn btn-secondary" href="#team">
+          <!-- Opens Team section using data-section -->
+          <a class="btn btn-secondary"
+             href="#team"
+             data-section="team">
+
             Join the Community →
+
           </a>
+
         </div>
+
       </article>
 
     </div>
+
   </div>
+
 </details>
 
-<!-- CTA Section: Call-to-Action Banner -->
+<!-- =========================================================
+     CTA SECTION: Final Call-To-Action Banner
+========================================================= -->
+<!--
+  Purpose:
+  Encourages users to connect with TechConnect
+  after reviewing the website content.
+
+  Navigation:
+  Uses data-section="contact" so main.js opens
+  the Contact accordion safely without inline JS.
+-->
+
 <section class="cta">
+
   <div class="container">
+
     <div class="cta-content">
-      <h2>Building digital skills together.</h2>
+
+      <!-- CTA heading -->
+      <h2>
+        Building digital skills together.
+      </h2>
+
+      <!-- CTA supporting text -->
       <p>
         Making technology knowledge easier to access,
         easier to understand, and easier to apply.
       </p>
 
+      <!-- CTA button -->
       <a class="btn btn-secondary"
-        href="#contact"
-        onclick="openSection('contact')">
+         href="#contact"
+         data-section="contact">
+
         Start a Conversation
+
       </a>
+
     </div>
+
   </div>
+
 </section>

@@ -1,211 +1,285 @@
-<!-- ============================================
+<!-- =========================================================
      AREAS SECTION: Technology Learning Areas
-     ============================================
+========================================================= -->
+<!--
+  Purpose:
+  Displays the major technology learning domains
+  supported by TechConnect Learning Hub.
 
-     Purpose:
-     Displays the major technology learning domains
-     offered by TechConnect Learning Hub.
+  Main Features:
+  - Hero banner content
+  - CTA navigation buttons
+  - Interactive technology cards
+  - Upcoming events showcase
 
-     Features:
-     - Hero heading with CTA buttons
-     - Responsive technology cards grid
-     - Clickable cards linked to Topics section
-     - Professional community-learning presentation
+  Navigation:
+  Uses data-section attributes instead of inline
+  JavaScript for better security and maintainability.
+-->
 
-     Navigation:
-     Each card opens the Topics section dynamically
-     using the openSection() JavaScript function.
-     ============================================ -->
+<section id="areas"
+         class="areas">
 
-<section id="areas" class="areas">
-
-  <!-- Main Layout Container -->
+  <!-- =====================================================
+       MAIN SECTION CONTAINER
+  ====================================================== -->
   <div class="container areas-layout">
 
-    <!-- ============================================
-         SECTION HEADER / HERO CONTENT
-         ============================================ -->
+    <!-- =================================================
+         HERO CONTENT / SECTION INTRO
+    ================================================== -->
     <div class="section-head professional-head hero-copy">
 
-      <!-- Small Highlight Label -->
+      <!-- =============================================
+           SMALL HIGHLIGHT LABEL
+      ============================================== -->
       <div class="eyebrow">
+
         Community-driven ICT learning
+
       </div>
 
-      <!-- ============================================
+      <!-- =============================================
            CALL-TO-ACTION BUTTONS
-           ============================================
+      ============================================== -->
+      <!--
+        Primary button:
+        - Keeps user inside current section
 
-           Primary:
-           - Explore current learning areas
-
-           Secondary:
-           - Opens additional information sections
-           dynamically without page reload
-           ============================================ -->
+        Secondary buttons:
+        - Dynamically open accordion sections
+      -->
       <div class="hero-actions">
 
-        <!-- Primary Button -->
-        <a class="btn btn-primary" href="#areas">
+        <!-- Primary CTA -->
+        <a class="btn btn-primary"
+           href="#areas">
+
           Explore Areas
+
         </a>
 
-        <!-- Secondary Buttons -->
+        <!-- Secondary CTA: Mission -->
         <a class="btn btn-secondary"
-           href="javascript:void(0)"
-           onclick="openSection('mission')">
+           href="#mission"
+           data-section="mission">
+
           Our Mission
+
         </a>
 
+        <!-- Secondary CTA: Values -->
         <a class="btn btn-secondary"
-           href="javascript:void(0)"
-           onclick="openSection('values')">
+           href="#values"
+           data-section="values">
+
           Our Values
+
         </a>
 
+        <!-- Secondary CTA: Approach -->
         <a class="btn btn-secondary"
-           href="javascript:void(0)"
-           onclick="openSection('approach')">
+           href="#approach"
+           data-section="approach">
+
           Our Approach
+
         </a>
 
+        <!-- Secondary CTA: Audience -->
         <a class="btn btn-secondary"
-           href="javascript:void(0)"
-           onclick="openSection('audience')">
+           href="#audience"
+           data-section="audience">
+
           Our Audience
+
         </a>
 
       </div>
 
-      <!-- Main Heading -->
+      <!-- =============================================
+           MAIN HEADING
+      ============================================== -->
       <h2>
+
         Empowering Practical
-        <span class="blue">Technology Learning</span>
+
+        <span class="blue">
+          Technology Learning
+        </span>
+
       </h2>
 
     </div>
 
-    <!-- ============================================
-         TECHNOLOGY AREAS GRID
-         ============================================
+    <!-- =================================================
+         TECHNOLOGY LEARNING AREAS GRID
+    ================================================== -->
+    <!--
+      Each image card represents a practical
+      learning area offered by the community.
 
-         Displays interactive image cards for:
-         - Cloud Computing
-         - Jira & Confluence
-         - API Integration
-         - Business Analysis
-         - MuleSoft
-
-         All cards redirect users to Topics section.
-         ============================================ -->
+      Clicking a card opens the Topics section.
+    -->
     <div class="areas-grid">
 
-      <!-- ============================================
-           CARD 1: Cloud Computing
-           ============================================ -->
+      <!-- =============================================
+           CARD 1: CLOUD COMPUTING
+      ============================================== -->
       <a class="cloud-card"
-         href="javascript:void(0)"
-         onclick="openSection('topics')">
+         href="#topics"
+         data-section="topics">
 
         <img
           src="./resources/images/cloud-computing.jpg"
           alt="Cloud Computing">
+
       </a>
 
-      <!-- ============================================
-           CARD 2: Jira & Confluence
-           ============================================ -->
+      <!-- =============================================
+           CARD 2: JIRA & CONFLUENCE
+      ============================================== -->
       <a class="cloud-card"
-         href="javascript:void(0)"
-         onclick="openSection('topics')">
+         href="#topics"
+         data-section="topics">
 
         <img
           src="./resources/images/JIRA&Confluence.jpg"
           alt="Jira & Confluence">
+
       </a>
 
-      <!-- ============================================
-           CARD 3: API & Integration
-           ============================================ -->
+      <!-- =============================================
+           CARD 3: API & INTEGRATION
+      ============================================== -->
       <a class="cloud-card"
-         href="javascript:void(0)"
-         onclick="openSection('topics')">
+         href="#topics"
+         data-section="topics">
 
         <img
           src="./resources/images/API&Integration.jpg"
           alt="API & Integration">
+
       </a>
 
-      <!-- ============================================
-           CARD 4: Business Analyst
-           ============================================ -->
+      <!-- =============================================
+           CARD 4: BUSINESS ANALYSIS
+      ============================================== -->
       <a class="cloud-card"
-         href="javascript:void(0)"
-         onclick="openSection('topics')">
+         href="#topics"
+         data-section="topics">
 
         <img
           src="./resources/images/Business Analyst.jpg"
           alt="Business Analyst">
+
       </a>
 
-      <!-- ============================================
-           CARD 5: MuleSoft
-           ============================================ -->
+      <!-- =============================================
+           CARD 5: MULESOFT
+      ============================================== -->
       <a class="cloud-card"
-         href="javascript:void(0)"
-         onclick="openSection('topics')">
+         href="#topics"
+         data-section="topics">
 
         <img
           src="./resources/images/MuleSoft.jpg"
           alt="MuleSoft Anypoint Cloud Hub">
+
       </a>
 
     </div>
 
-    <!-- ============================================
+    <!-- =================================================
          UPCOMING EVENTS SECTION
-         ============================================
-
-         Positioned below technology cards.
-
-         Purpose:
-         Highlights upcoming community learning
-         sessions, workshops, and mentorship events.
-
-         Future Enhancement Ideas:
-         - Auto-scrolling carousel
-         - Dynamic API-based event loading
-         - Registration buttons
-         - Event countdown timer
-         ============================================ -->
+    ================================================== -->
+    <!--
+      Highlights future:
+      - Workshops
+      - Community sessions
+      - Mentorship opportunities
+      - Technology meetups
+    -->
     <section class="events-card events-wide main-events">
 
-      <!-- Events Header -->
+      <!-- =============================================
+           EVENTS HEADER
+      ============================================== -->
       <div class="events-card-header">
+
         📅 UPCOMING EVENTS
+
       </div>
 
-      <!-- Events Body -->
+      <!-- =============================================
+           EVENTS BODY
+      ============================================== -->
       <div class="events-card-body">
 
-        <!-- Events List -->
+        <!-- =========================================
+             SCROLLING EVENTS LIST
+        ========================================== -->
+        <!--
+          Duplicate items are intentionally repeated
+          for infinite scrolling animation effect.
+        -->
         <div class="events-card-scroll">
-          <span>☁️ Cloud Basics Session • Coming Soon</span>
-          <span>🔗 API Workshop • Coming Soon</span>
-          <span>📋 Jira &amp; Confluence • Coming Soon</span>
-          <span>⚡ MuleSoft Meetup • Coming Soon</span>
-          <span>🎓 Career Mentorship • Coming Soon</span>
 
-          <!-- duplicate items for smooth loop -->
-          <span>☁️ Cloud Basics Session • Coming Soon</span>
-          <span>🔗 API Workshop • Coming Soon</span>
-          <span>📋 Jira &amp; Confluence • Coming Soon</span>
-          <span>⚡ MuleSoft Meetup • Coming Soon</span>
-          <span>🎓 Career Mentorship • Coming Soon</span>
+          <!-- Event 1 -->
+          <span>
+            ☁️ Cloud Basics Session • Coming Soon
+          </span>
+
+          <!-- Event 2 -->
+          <span>
+            🔗 API Workshop • Coming Soon
+          </span>
+
+          <!-- Event 3 -->
+          <span>
+            📋 Jira &amp; Confluence • Coming Soon
+          </span>
+
+          <!-- Event 4 -->
+          <span>
+            ⚡ MuleSoft Meetup • Coming Soon
+          </span>
+
+          <!-- Event 5 -->
+          <span>
+            🎓 Career Mentorship • Coming Soon
+          </span>
+
+          <!-- =====================================
+               DUPLICATE ITEMS FOR SMOOTH LOOP
+          ====================================== -->
+
+          <span>
+            ☁️ Cloud Basics Session • Coming Soon
+          </span>
+
+          <span>
+            🔗 API Workshop • Coming Soon
+          </span>
+
+          <span>
+            📋 Jira &amp; Confluence • Coming Soon
+          </span>
+
+          <span>
+            ⚡ MuleSoft Meetup • Coming Soon
+          </span>
+
+          <span>
+            🎓 Career Mentorship • Coming Soon
+          </span>
+
         </div>
+
       </div>
 
     </section>
 
   </div>
+
 </section>
