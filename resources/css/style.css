@@ -206,7 +206,7 @@ img {
     .hero-image {
       display: block;
       min-height: 500px;
-      background: url('../images/techconnect-cover.jpg') center / cover no-repeat;
+      background: url('../images/webp/techconnect-cover.webp') center / cover no-repeat;
       border-radius: 0;
       box-shadow: none;
       margin-top: 0;
