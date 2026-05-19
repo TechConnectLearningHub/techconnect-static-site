@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Mission Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#mission</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Values Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#values</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Areas Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#areas</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Topics Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#topics</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Approach Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#approach</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Audience Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#audience</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Team Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#team</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Partners Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#partners</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://techconnectlearninghub.github.io/techconnect-static-site/#contact</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

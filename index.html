@@ -6,33 +6,42 @@
   <!-- =====================================================
        CHARACTER ENCODING
   ====================================================== -->
-  <!-- Ensures proper text rendering -->
+  <!-- Ensures proper text rendering across browsers -->
   <meta charset="UTF-8" />
 
   <!-- =====================================================
        MOBILE RESPONSIVE VIEWPORT
   ====================================================== -->
-  <!-- Makes layout responsive on phones/tablets -->
+  <!-- Makes the layout responsive on phones and tablets -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
 
   <!-- =====================================================
        SEO DESCRIPTION
   ====================================================== -->
-  <!-- Helps search engines understand the website -->
+  <!-- Helps search engines understand website purpose -->
   <meta name="description"
         content="TechConnect Learning Hub is a community-driven ICT learning initiative for practical digital and enterprise skills." />
 
   <!-- =====================================================
        PAGE TITLE
   ====================================================== -->
-  <!-- Browser tab title -->
+  <!-- Displayed in browser tabs and search results -->
   <title>TechConnect Learning Hub</title>
+
+  <!-- =====================================================
+       PERFORMANCE: HERO IMAGE PRELOAD
+  ====================================================== -->
+  <!-- Preloads the hero banner image early to improve
+       Largest Contentful Paint (LCP) performance -->
+  <link rel="preload"
+        as="image"
+        href="./resources/images/webp/techconnect-cover.webp" />
 
   <!-- =====================================================
        MAIN STYLESHEET
   ====================================================== -->
-  <!-- Loads all CSS styles -->
+  <!-- Loads all website styling -->
   <link rel="stylesheet"
         href="./resources/css/style.css?v=3" />
 
