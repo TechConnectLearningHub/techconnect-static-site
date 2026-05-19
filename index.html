@@ -1,113 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- ============================================
-         META: Document Encoding & Viewport Settings
-         ============================================ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TechConnect Learning Hub is a community-driven ICT learning initiative for practical digital and enterprise skills." />
-    
-    <!-- ============================================
-         PAGE TITLE & BRANDING
-         ============================================ -->
-    <title>TechConnect Learning Hub</title>
-    
-    <!-- ============================================
-         STYLESHEET: Main CSS Styles
-         ============================================ -->
-    <link rel="stylesheet" href="./resources/css/style.css?v=3" />
-  </head>
-  <body>
-    <!-- ============================================
-         HEADER: Navigation Bar & Logo
-         ============================================ -->
-    <header>
-      <div class="container nav">
-        <!-- Brand Logo & Text -->
-        <a class="brand" href="#home">
-          <img src="./resources/images/techconnect-logo.jpg" alt="TechConnect Learning Hub logo" />
-          <div class="brand-text">
-            <div class="brand-title">
-              <span class="tech-dark">Tech</span><span class="tech-blue">Connect</span>
-            </div>
-            <div class="brand-subtitle">Learning Hub</div>
+
+<head>
+
+  <!-- =====================================================
+       CHARACTER ENCODING
+  ====================================================== -->
+  <!-- Ensures proper text rendering -->
+  <meta charset="UTF-8" />
+
+  <!-- =====================================================
+       MOBILE RESPONSIVE VIEWPORT
+  ====================================================== -->
+  <!-- Makes layout responsive on phones/tablets -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+  <!-- =====================================================
+       SEO DESCRIPTION
+  ====================================================== -->
+  <!-- Helps search engines understand the website -->
+  <meta name="description"
+        content="TechConnect Learning Hub is a community-driven ICT learning initiative for practical digital and enterprise skills." />
+
+  <!-- =====================================================
+       PAGE TITLE
+  ====================================================== -->
+  <!-- Browser tab title -->
+  <title>TechConnect Learning Hub</title>
+
+  <!-- =====================================================
+       MAIN STYLESHEET
+  ====================================================== -->
+  <!-- Loads all CSS styles -->
+  <link rel="stylesheet"
+        href="./resources/css/style.css?v=3" />
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER / TOP NAVIGATION
+  ====================================================== -->
+  <header>
+
+    <div class="container nav">
+
+      <!-- ===============================================
+           BRAND / LOGO
+      ================================================ -->
+      <a class="brand" href="#home">
+
+        <!-- Logo image -->
+        <img src="./resources/images/techconnect-logo.jpg"
+             alt="TechConnect Learning Hub logo" />
+
+        <!-- Brand text -->
+        <div class="brand-text">
+
+          <!-- Main title -->
+          <div class="brand-title">
+            <span class="tech-dark">Tech</span>
+            <span class="tech-blue">Connect</span>
           </div>
+
+          <!-- Subtitle -->
+          <div class="brand-subtitle">
+            Learning Hub
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- ===============================================
+           DESKTOP NAVIGATION MENU
+      ================================================ -->
+      <nav>
+
+        <!-- Normal anchor navigation -->
+        <a class="active" href="#home">
+          Home
         </a>
 
-        <!-- Main Navigation Menu -->
-        <nav>
-          <a class="active" href="#home">Home</a>
-          <a href="#mission" onclick="openSection('mission')">Mission</a>
-          <a href="#values" onclick="openSection('values')">Values</a>
-          <a href="#areas">Areas</a>
-          <a href="#topics" onclick="openSection('topics')">Topics</a>
-          <a href="#approach" onclick="openSection('approach')">Approach</a>
-          <a href="#audience" onclick="openSection('audience')">Audience</a>
-          <a href="#team" onclick="openSection('team')">Team</a>
-          <a href="#partners" onclick="openSection('partners')">Partners</a>
-          <a href="#contact" onclick="openSection('contact')">Contact</a>
-        </nav>
+        <!-- Accordion section links -->
+        <!-- data-section tells JS which section to open -->
+        <a href="#mission"
+           data-section="mission">
+          Mission
+        </a>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
-          ☰
-        </button>
+        <a href="#values"
+           data-section="values">
+          Values
+        </a>
 
-        <!-- Header CTA Button -->
-        <a class="header-cta" href="javascript:void(0)" onclick="openSection('contact')">Contact Us</a>
-      </div>
-    </header>
+        <!-- Standard section -->
+        <a href="#areas">
+          Areas
+        </a>
 
-    <!-- ============================================
-         MOBILE MENU: Side Navigation
-         ============================================ -->
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="mobile-close" onclick="toggleMobileMenu()">×</button>
-      <a href="#home" onclick="toggleMobileMenu()">Home</a>
-      <a href="javascript:void(0)" onclick="openSection('mission'); toggleMobileMenu()">Mission</a>
-      <a href="javascript:void(0)" onclick="openSection('values'); toggleMobileMenu()">Values</a>
-      <a href="#areas" onclick="toggleMobileMenu()">Areas</a>
-      <a href="javascript:void(0)" onclick="openSection('topics'); toggleMobileMenu()">Topics</a>
-      <a href="javascript:void(0)" onclick="openSection('team'); toggleMobileMenu()">Team</a>
-      <a href="javascript:void(0)" onclick="openSection('partners'); toggleMobileMenu()">Partners</a>
-      <a href="javascript:void(0)" onclick="openSection('contact'); toggleMobileMenu()">Contact</a>
+        <a href="#topics"
+           data-section="topics">
+          Topics
+        </a>
+
+        <a href="#approach"
+           data-section="approach">
+          Approach
+        </a>
+
+        <a href="#audience"
+           data-section="audience">
+          Audience
+        </a>
+
+        <a href="#team"
+           data-section="team">
+          Team
+        </a>
+
+        <a href="#partners"
+           data-section="partners">
+          Partners
+        </a>
+
+        <a href="#contact"
+           data-section="contact">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- ===============================================
+           MOBILE MENU BUTTON
+      ================================================ -->
+      <!-- Hamburger icon -->
+      <button class="mobile-menu-btn"
+              type="button"
+              aria-label="Open menu"
+              data-mobile-menu-toggle>
+
+        ☰
+
+      </button>
+
+      <!-- ===============================================
+           HEADER CTA BUTTON
+      ================================================ -->
+      <!-- Opens contact accordion -->
+      <a class="header-cta"
+         href="#contact"
+         data-section="contact">
+
+        Contact Us
+
+      </a>
+
     </div>
 
-    <!-- ============================================
-         MAIN CONTENT: Dynamic Sections
-         ============================================ -->
-    <main id="home">
-      <!-- Hero Section with Cover Image -->
-      <section class="hero">
-        <div class="hero-image" aria-label="TechConnect community learning cover image"></div>
-      </section>
+  </header>
 
-      <!-- Dynamic Section Containers -->
-      <!-- These are populated by main.js from /resources/sections/ folder -->
-      <div id="areas-section"></div>
-      <div id="mission-section"></div>
-      <div id="values-section"></div>
-      <div id="approach-section"></div>
-      <div id="audience-section"></div>
-      <div id="topics-section"></div>
-      <div id="team-section"></div>
-      <div id="partners-section"></div>
-      <div id="contact-section"></div>
-      
+  <!-- =====================================================
+       MOBILE SIDE MENU
+  ====================================================== -->
+  <div class="mobile-menu"
+       id="mobileMenu">
 
-      <!-- JavaScript: Main Application Logic -->
-      <script src="./resources/js/main.js?v=3"></script>
-    </main>
+    <!-- Close button -->
+    <button class="mobile-close"
+            type="button"
+            aria-label="Close menu"
+            data-mobile-menu-toggle>
 
-    <!-- ============================================
-         FOOTER: Copyright & Branding
-         ============================================ -->
-    <footer>
-      <div class="container footer-inner">
-        <div>© 2026 TechConnect Learning Hub</div>
-        <div>Learn. Connect. Grow.</div>
+      ×
+
+    </button>
+
+    <!-- Mobile navigation links -->
+    <a href="#home"
+       data-mobile-close>
+      Home
+    </a>
+
+    <a href="#mission"
+       data-section="mission"
+       data-mobile-close>
+      Mission
+    </a>
+
+    <a href="#values"
+       data-section="values"
+       data-mobile-close>
+      Values
+    </a>
+
+    <a href="#areas"
+       data-mobile-close>
+      Areas
+    </a>
+
+    <a href="#topics"
+       data-section="topics"
+       data-mobile-close>
+      Topics
+    </a>
+
+    <a href="#approach"
+       data-section="approach"
+       data-mobile-close>
+      Approach
+    </a>
+
+    <a href="#audience"
+       data-section="audience"
+       data-mobile-close>
+      Audience
+    </a>
+
+    <a href="#team"
+       data-section="team"
+       data-mobile-close>
+      Team
+    </a>
+
+    <a href="#partners"
+       data-section="partners"
+       data-mobile-close>
+      Partners
+    </a>
+
+    <a href="#contact"
+       data-section="contact"
+       data-mobile-close>
+      Contact
+    </a>
+
+  </div>
+
+  <!-- =====================================================
+       MAIN WEBSITE CONTENT
+  ====================================================== -->
+  <main id="home">
+
+    <!-- ===============================================
+         HERO SECTION / COVER IMAGE
+    ================================================ -->
+    <section class="hero">
+
+      <div class="hero-image"
+           aria-label="TechConnect community learning cover image">
       </div>
-    </footer>
-  </body>
+
+    </section>
+
+    <!-- ===============================================
+         DYNAMICALLY LOADED HTML SECTIONS
+    ================================================ -->
+    <!--
+      These placeholder divs are populated
+      dynamically by main.js using fetch()
+    -->
+
+    <div id="areas-section"></div>
+
+    <div id="mission-section"></div>
+
+    <div id="values-section"></div>
+
+    <div id="approach-section"></div>
+
+    <div id="audience-section"></div>
+
+    <div id="topics-section"></div>
+
+    <div id="team-section"></div>
+
+    <div id="partners-section"></div>
+
+    <div id="contact-section"></div>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <!-- Copyright -->
+      <div>
+        © 2026 TechConnect Learning Hub
+      </div>
+
+      <!-- Motto -->
+      <div>
+        Learn. Connect. Grow.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- =====================================================
+       MAIN JAVASCRIPT FILE
+  ====================================================== -->
+  <!--
+    Handles:
+    - Dynamic section loading
+    - Accordions
+    - Navigation logic
+    - Mobile menu
+  -->
+  <script src="./resources/js/main.js?v=3"></script>
+
+</body>
+
 </html>
