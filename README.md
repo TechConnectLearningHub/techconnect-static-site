@@ -264,10 +264,10 @@ const sectionFiles = [
 - **Status:** ✅ RESOLVED
 
 #### Bug #3: Logo/Images Not Displaying
-- **Problem:** CSS background-image using incorrect relative path `./resources/images/`
+- **Problem:** CSS background-image using incorrect relative path `./resources/images/webp`
 - **Impact:** Hero image and logos not visible
 - **Root Cause:** CSS file in `resources/css/` subdirectory requires `../` to access images
-- **Solution:** Changed path to `../images/techconnect-cover.jpg`
+- **Solution:** Changed path to `../images/webp/techconnect-cover.webp`
 - **File:** `resources/css/style.css` (Hero section)
 - **Status:** ✅ RESOLVED
 
@@ -308,7 +308,7 @@ const sectionFiles = [
 **Dependencies:**
 - `./resources/css/style.css` (stylesheet)
 - `./resources/js/main.js` (application logic)
-- `./resources/images/` (brand assets)
+- `./resources/images/webp` (brand assets)
 
 ---
 
@@ -409,7 +409,7 @@ python3 -m http.server 8000
 - **Main HTML:** http://localhost:8000/techconnect_static_website.html
 - **CSS:** http://localhost:8000/resources/css/style.css
 - **JavaScript:** http://localhost:8000/resources/js/main.js
-- **Images:** http://localhost:8000/resources/images/
+- **Images:** http://localhost:8000/resources/images/webp
 - **Sections:** http://localhost:8000/resources/sections/
 
 ---
