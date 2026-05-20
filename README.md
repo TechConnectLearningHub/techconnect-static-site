@@ -61,6 +61,12 @@ techconnect_static_website.html          # Main HTML entry point (107 lines)
 ├─ resources/
 │  ├─ css/
 │  │  └─ style.css                      # Complete styling system (817 lines)
+│  ├─ pages/
+│  │  └─ blog.html
+│  │  └─ community-resources.html
+│  │  └─ faq.html
+│  │  └─ learning-guides.html
+│  │  └─ workshops.html                      
 │  │
 │  ├─ images/
 │  │  ├─ techconnect-logo.jpg
@@ -80,7 +86,9 @@ techconnect_static_website.html          # Main HTML entry point (107 lines)
 │     ├─ team.html                      # Team roles + volunteer CTA
 │     ├─ topics.html                    # 8 learning topic cards
 │     └─ values.html                    # 6 core value cards
-│
+└─ index.html
+└─ sitemap.html
+└─ robots.txt
 └─ README.md                             # This file (interactive documentation)
 ```
 
