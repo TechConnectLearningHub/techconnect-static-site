@@ -115,6 +115,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     Automatically opens matching accordion section.
   */
+ /* Remove ANY hash so page does NOT auto-scroll */
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+  }
   const hash = window.location.hash.replace("#", "");
 
   if (hash) {
