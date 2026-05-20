@@ -309,6 +309,49 @@ function initialiseMobileMenu() {
 
 }
 
+  /* =====================================================
+     MOBILE RESOURCES DROPDOWN
+  ===================================================== */
+  /*
+    Handles:
+    - Expand / collapse
+    - Accordion animation
+    - Plus icon rotation
+  */
+  const mobileDropdown =
+    document.querySelector(".mobile-dropdown");
+
+  const mobileDropdownToggle =
+    document.querySelector(".mobile-dropdown-toggle");
+
+  /*
+    Only initialise if dropdown exists
+  */
+  if (mobileDropdown && mobileDropdownToggle) {
+
+    mobileDropdownToggle.addEventListener(
+      "click",
+      function () {
+
+        /*
+          Toggle accordion open state
+        */
+        const isOpen =
+          mobileDropdown.classList.toggle("open");
+
+        /*
+          Update accessibility attribute
+        */
+        mobileDropdownToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+      }
+    );
+
+  }
+
 /* =========================================================
    CLOSE MOBILE MENU
 ========================================================= */
