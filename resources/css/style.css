@@ -868,3 +868,86 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   .partners-grid { grid-template-columns: 1fr; }
   .arrow-process { grid-template-columns: 1fr; }
 }
+
+/* =====================================================
+   MISSION SECTION
+   Paste these rules at the bottom of your styles.css
+   IMPORTANT: make sure this file is saved and your
+   HTML <link> points to the correct CSS file path.
+===================================================== */
+
+.mission-section {
+  background: var(--soft-bg);
+  padding: 72px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 2x2 grid */
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Base card */
+.vm-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.09);
+}
+
+/* Colour variants — left border accent */
+.vm-blue   { border-left: 4px solid #1557d6; background: #f8fbff; }
+.vm-green  { border-left: 4px solid #0f6e56; background: #f0fdf7; }
+.vm-orange { border-left: 4px solid #f97316; background: #fff8f4; }
+.vm-purple { border-left: 4px solid #7c3aed; background: #faf7ff; }
+
+/* Icon */
+.vm-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* Coloured label */
+.vm-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+
+.vm-blue   .vm-label { color: #1557d6; }
+.vm-green  .vm-label { color: #0f6e56; }
+.vm-orange .vm-label { color: #c2410c; }
+.vm-purple .vm-label { color: #7c3aed; }
+
+/* Body text */
+.vm-text {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .vm-grid {
+    grid-template-columns: 1fr;
+  }
+  .vm-card {
+    padding: 22px 20px;
+  }
+}
