@@ -1,59 +1,185 @@
 <!-- =========================================================
-     MISSION SECTION — paste AFTER the closing </section>
-     of the Areas block in index.html
+     VALUES & PURPOSE SECTION
 ========================================================= -->
 
-<section id="mission" class="mission-section">
+<section id="values-purpose" class="mission-section">
   <div class="container">
 
-    <div class="section-head" style="margin-bottom: 36px;">
-      <div class="eyebrow">Who we are</div>
-      <h2>Mission, <span class="blue">Vision</span> &amp; Purpose</h2>
-      <p>
-        The principles that define why TechConnect Learning Hub
-        exists and how it serves the community.
-      </p>
-    </div>
+    <div class="vp-grid">
 
-    <div class="vm-grid">
+      <!-- ================================================
+           LEFT: Mission / Vision / Purpose / Motto
+      ================================================= -->
+      <div class="values-panel vp-col">
 
-      <div class="vm-card vm-blue">
-        <div class="vm-icon">🔭</div>
-        <div class="vm-label">Vision</div>
-        <p class="vm-text">
-          To become a trusted community learning hub that
-          inspires growth and digital confidence.
-        </p>
+        <div>
+          <p class="kicker">Who we are</p>
+          <h2 style="font-size: clamp(1.6rem, 2vw, 2rem);">Mission, <span class="blue">Vision</span> &amp; Purpose</h2>
+          <p class="values-panel-intro">The principles that define why TechConnect Learning Hub exists and how it serves the community.</p>
+        </div>
+
+        <div class="compact-values-grid vp-cards">
+
+          <article class="compact-value-card" style="border-color: #dbeafe;">
+            <span style="background: #eef5ff;">🔭</span>
+            <div>
+              <h3 style="color: #1557d6;">Vision</h3>
+              <p>A trusted community hub that inspires growth and digital confidence.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card" style="border-color: #d1fae5;">
+            <span style="background: #ecfdf5;">🎯</span>
+            <div>
+              <h3 style="color: #0f6e56;">Mission</h3>
+              <p>Empowering individuals through accessible, practical and inclusive ICT learning.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card" style="border-color: #fed7aa;">
+            <span style="background: #fff7ed;">👥</span>
+            <div>
+              <h3 style="color: #c2410c;">Purpose</h3>
+              <p>Bringing practical technology knowledge to people who need it most.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card" style="border-color: #ddd6fe;">
+            <span style="background: #f5f3ff;">⭐</span>
+            <div>
+              <h3 style="color: #7c3aed;">Motto</h3>
+              <p><em>Learn. Connect. Grow.</em> — knowledge is stronger when shared.</p>
+            </div>
+          </article>
+
+        </div>
+
       </div>
 
-      <div class="vm-card vm-green">
-        <div class="vm-icon">🎯</div>
-        <div class="vm-label">Mission</div>
-        <p class="vm-text">
-          To empower individuals and communities through
-          accessible, practical, and inclusive ICT learning.
-        </p>
-      </div>
+      <!-- ================================================
+           RIGHT: Community-first Values
+      ================================================= -->
+      <aside class="values-panel vp-col">
 
-      <div class="vm-card vm-orange">
-        <div class="vm-icon">👥</div>
-        <div class="vm-label">Purpose</div>
-        <p class="vm-text">
-          To bring practical technology knowledge closer
-          to people who need it most.
-        </p>
-      </div>
+        <div>
+          <p class="kicker">Community-first values</p>
+          <h2 style="font-size: clamp(1.6rem, 2vw, 2rem);">Learning built around <span class="blue">people</span></h2>
+          <p class="values-panel-intro">Our values guide how we teach, collaborate, mentor and support every learner in the TechConnect community.</p>
+        </div>
 
-      <div class="vm-card vm-purple">
-        <div class="vm-icon">⭐</div>
-        <div class="vm-label">Motto</div>
-        <p class="vm-text">
-          Learn. Connect. Grow. Knowledge becomes stronger
-          when shared with the community.
-        </p>
-      </div>
+        <div class="compact-values-grid vp-cards">
+
+          <article class="compact-value-card">
+            <span>🌍</span>
+            <div>
+              <h3>Inclusivity</h3>
+              <p>Welcoming learners from all backgrounds.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card">
+            <span>🧭</span>
+            <div>
+              <h3>Accessibility</h3>
+              <p>Making technology learning easier to reach.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card">
+            <span>🤝</span>
+            <div>
+              <h3>Collaboration</h3>
+              <p>Growing through teamwork and mentoring.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card">
+            <span>💡</span>
+            <div>
+              <h3>Simplicity</h3>
+              <p>Explaining complex topics clearly.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card">
+            <span>🚀</span>
+            <div>
+              <h3>Empowerment</h3>
+              <p>Building confidence and digital capability.</p>
+            </div>
+          </article>
+
+          <article class="compact-value-card">
+            <span>❤️</span>
+            <div>
+              <h3>Impact</h3>
+              <p>Creating positive community outcomes.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </aside>
 
     </div>
 
   </div>
 </section>
+
+<!-- =========================================================
+     ADD TO BOTTOM OF style.css
+     (remove any old .values-purpose-grid overrides first)
+========================================================= -->
+<style>
+/* Outer 2-col grid */
+.vp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Each panel column */
+.vp-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inner card grids */
+.vp-cards {
+  flex: 1;
+}
+
+/* ── Tablet: collapse outer to 1 col, keep inner 2-col ── */
+@media (max-width: 900px) {
+  .vp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile: collapse inner card grids to 1 col too ── */
+@media (max-width: 640px) {
+  .vp-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .compact-value-card {
+    min-height: unset !important;
+  }
+}
+
+/* Remove old conflicting override if present */
+.values-purpose-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 900px) {
+  .values-purpose-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>

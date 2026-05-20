@@ -413,7 +413,45 @@ h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); line-height: 1.1; letter-spacing: -0
 /* ── BACK ── */
 .flip-card-back {
   transform: rotateY(180deg);
-  padding: 20px 18px;
+  padding: 24px 22px;
+  background: linear-gradient(145deg, #1557d6, #0f3f9f);
+  border-color: #0f3f9f;
+  color: white;
+}
+
+/* Text visibility fix */
+.flip-card-back h3 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.flip-card-back p {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* CTA */
+.mini-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.mini-cta:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+.mini-cta:hover {
+  opacity: 0.85;
 }
 
 .flip-card-back h3 {
@@ -1822,4 +1860,276 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
     width: 200px;
     height: 112px;
   }
+}
+.card-hint {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  opacity: 0.85;
+}
+
+.mini-cta:hover {
+  text-decoration: underline;
+}
+
+.values-cta {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #eef4ff, #f8fbff);
+  border: 1px solid #dbeafe;
+}
+
+.values-cta h3 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+.values-cta p {
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
+  color: #475569;
+}
+
+.values-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+.values-skills-section {
+  background: var(--soft-bg);
+}
+
+.values-skills-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: 34px;
+  align-items: stretch;
+}
+
+.values-skills-left,
+.values-skills-right {
+  min-width: 0;
+}
+
+.compact-process {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 22px;
+}
+
+.values-panel {
+  height: 100%;
+  padding: 28px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
+}
+
+.values-panel h2 {
+  font-size: clamp(1.6rem, 2vw, 2rem) !important;
+  margin-bottom: 14px;
+}
+
+.values-panel-intro {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.compact-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.compact-value-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  transition: 0.25s ease;
+  min-height: 120px;
+}
+
+.compact-value-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 24px rgba(21, 87, 214, 0.1);
+}
+
+.compact-value-card span {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--primary-soft);
+  font-size: 1.25rem;
+}
+
+.compact-value-card h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.compact-value-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  align-items: center;
+}
+
+.values-panel-cta {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #1557d6, #0f3f9f);
+  color: #ffffff;
+}
+
+.values-panel-cta h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.values-panel-cta p {
+  color: #dbeafe;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.values-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.values-panel-actions .btn-secondary {
+  background: #ffffff;
+  color: var(--primary);
+  border-color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+  .values-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-process {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .compact-values-grid,
+  .compact-process {
+    grid-template-columns: 1fr;
+  }
+
+  .values-panel {
+    padding: 28px  !important;
+  }
+
+  .values-panel-actions .btn {
+    width: 100%;
+  }
+}
+.values-purpose-grid {
+  display: grid !important;
+  grid-template-columns: 1.25fr 0.75fr !important;
+  gap: 48px !important;
+  align-items: start;
+}
+
+.values-purpose-left,
+.values-purpose-right {
+  min-width: 0;
+}
+
+.values-purpose-right {
+  position: static;
+}
+
+@media (max-width: 900px) {
+  .values-purpose-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* =====================================================
+                  RENDERING FIX 
+   Fixes: flip cards and events ticker not displaying
+   until user interaction on load.
+===================================================== */
+
+/* Force GPU layer promotion on flip cards immediately */
+.flip-card-inner {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Ensure front face is always visible on load */
+.flip-card-front {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Ensure back face is pre-rendered but hidden */
+.flip-card-back {
+  will-change: transform;
+  transform: rotateY(180deg) translateZ(0);
+  -webkit-transform: rotateY(180deg) translateZ(0);
+}
+
+/* Fix: delay animation start so browser finishes
+   painting the layout before the ticker moves */
+.events-card-scroll {
+  will-change: transform;
+  transform: translateZ(0);
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+/* Fix: promote events container to its own layer */
+.events-card-body {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fix: ensure the section itself is visible on load */
+#areas {
+  transform: translateZ(0);
 }
