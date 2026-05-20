@@ -116,7 +116,7 @@
   ====================================================== -->
   <!-- Loads all website styling -->
   <link rel="stylesheet"
-        href="./resources/css/style.css?v=3" />
+        href="./resources/css/style.css" />
 
 </head>
 
@@ -159,61 +159,164 @@
       <!-- ===============================================
            DESKTOP NAVIGATION MENU
       ================================================ -->
-      <nav>
+      <!-- ===============================================
+     DESKTOP NAVIGATION MENU
+================================================ -->
+    <nav>
 
-        <!-- Normal anchor navigation -->
-        <a class="active" href="#home">
-          Home
-        </a>
+      <!-- ===========================================
+          HOME
+      ============================================ -->
+      <a class="active"
+        href="#home">
 
-        <!-- Accordion section links -->
-        <!-- data-section tells JS which section to open -->
-        <a href="#mission"
-           data-section="mission">
-          Mission
-        </a>
+        Home
 
-        <a href="#values"
-           data-section="values">
-          Values
-        </a>
+      </a>
 
-        <!-- Standard section -->
-        <a href="#areas">
-          Areas
-        </a>
+      <!-- ===========================================
+          ABOUT
+      ============================================ -->
+      <!-- Combines:
+          - Mission
+          - Values
+          - Approach
+          - Audience -->
+      <a href="#mission"
+        data-section="mission">
 
-        <a href="#topics"
-           data-section="topics">
-          Topics
-        </a>
+        About
 
-        <a href="#approach"
-           data-section="approach">
-          Approach
-        </a>
+      </a>
 
-        <a href="#audience"
-           data-section="audience">
-          Audience
-        </a>
+      <!-- ===========================================
+          EXPLORE SKILLS
+      ============================================ -->
+      <!-- Combines:
+          - Areas
+          - Topics -->
+      <a href="#areas">
 
-        <a href="#team"
-           data-section="team">
-          Team
-        </a>
+        Explore Skills
 
-        <a href="#partners"
-           data-section="partners">
-          Partners
-        </a>
+      </a>
 
-        <a href="#contact"
-           data-section="contact">
-          Contact
-        </a>
+     <!-- ===========================================
+     RESOURCES DROPDOWN
+        ============================================ -->
+        <!--
+          Replaces the old accordion-based Resources section
+          with a modern dropdown navigation menu.
 
-      </nav>
+          Purpose:
+          - Cleaner UX
+          - Scalable navigation architecture
+          - Better separation of content
+          - Allows dedicated standalone pages
+
+          Future pages:
+          - FAQ
+          - Blog
+          - Learning Guides
+          - Workshops
+          - Community Resources
+        -->
+        <div class="nav-dropdown">
+
+          <!-- =======================================
+              DROPDOWN TRIGGER
+          ======================================== -->
+          <!--
+            Main clickable navigation item.
+
+            The ▾ symbol indicates
+            expandable dropdown content.
+          -->
+          <a href="#"
+            class="nav-dropdown-trigger">
+
+            Resources ▾
+
+          </a>
+
+          <!-- =======================================
+              DROPDOWN MENU
+          ======================================== -->
+          <!--
+            Contains links to standalone resource pages.
+
+            These pages are NOT loaded dynamically
+            like accordion sections.
+
+            They open as independent pages.
+          -->
+          <div class="nav-dropdown-menu">
+
+            <!-- FAQ PAGE -->
+            <a href="./resources/pages/faq.html">
+
+              FAQ
+
+            </a>
+
+            <!-- BLOG PAGE -->
+            <a href="./resources/pages/blog.html">
+
+              Blog
+
+            </a>
+
+            <!-- LEARNING GUIDES PAGE -->
+            <a href="./resources/pages/learning-guides.html">
+
+              Learning Guides
+
+            </a>
+
+            <!-- WORKSHOPS PAGE -->
+            <a href="./resources/pages/workshops.html">
+
+              Workshops
+
+            </a>
+
+            <!-- COMMUNITY RESOURCES PAGE -->
+            <a href="./resources/pages/community-resources.html">
+
+              Community Resources
+
+            </a>
+
+          </div>
+
+        </div>
+      
+
+      <!-- ===========================================
+          COMMUNITY
+      ============================================ -->
+      <!-- Combines:
+          - Team
+          - Partners
+          - Volunteer -->
+      <a href="#team"
+        data-section="team">
+
+        Community
+
+      </a>
+
+      <!-- ===========================================
+          CONTACT
+      ============================================ -->
+      <a href="#contact"
+        data-section="contact">
+
+        Contact
+
+      </a>
+
+    </nav>
 
       <!-- ===============================================
            MOBILE MENU BUTTON
@@ -262,61 +365,49 @@
 
     <!-- Mobile navigation links -->
     <a href="#home"
-       data-mobile-close>
+      data-mobile-close>
+
       Home
+
     </a>
 
     <a href="#mission"
-       data-section="mission"
-       data-mobile-close>
-      Mission
-    </a>
+      data-section="mission"
+      data-mobile-close>
 
-    <a href="#values"
-       data-section="values"
-       data-mobile-close>
-      Values
+      About
+
     </a>
 
     <a href="#areas"
-       data-mobile-close>
-      Areas
+      data-mobile-close>
+
+      EXPLORE SKILLS
+
     </a>
 
-    <a href="#topics"
-       data-section="topics"
-       data-mobile-close>
-      Topics
-    </a>
+    <a href="#resources"
+      data-section="resources"
+      data-mobile-close>
 
-    <a href="#approach"
-       data-section="approach"
-       data-mobile-close>
-      Approach
-    </a>
+      Resources
 
-    <a href="#audience"
-       data-section="audience"
-       data-mobile-close>
-      Audience
     </a>
 
     <a href="#team"
-       data-section="team"
-       data-mobile-close>
-      Team
-    </a>
+      data-section="team"
+      data-mobile-close>
 
-    <a href="#partners"
-       data-section="partners"
-       data-mobile-close>
-      Partners
+      Community
+
     </a>
 
     <a href="#contact"
-       data-section="contact"
-       data-mobile-close>
+      data-section="contact"
+      data-mobile-close>
+
       Contact
+
     </a>
 
   </div>

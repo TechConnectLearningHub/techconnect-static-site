@@ -1,154 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- =====================================================
-     XML SITEMAP
-====================================================== -->
-<!--
-  Purpose:
-  Helps search engines discover and index
-  website pages and sections.
-
-  Website:
-  TechConnect Learning Hub
-
-  Notes:
-  - Each URL represents a major section
-    of the single-page application.
-  - Priorities indicate importance for indexing.
--->
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ===================================================
-       HOME PAGE
-  ==================================================== -->
+  <!-- HOME -->
   <url>
-
-    <!-- Main website URL -->
     <loc>
       https://techconnectlearninghub.github.io/techconnect-static-site/
     </loc>
-
-    <!-- Highest priority -->
     <priority>1.0</priority>
-
   </url>
 
-  <!-- ===================================================
-       MISSION SECTION
-  ==================================================== -->
+  <!-- RESOURCES -->
   <url>
-
     <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#mission
+      https://techconnectlearninghub.github.io/techconnect-static-site/resources/pages/faq.html
     </loc>
-
     <priority>0.9</priority>
-
   </url>
 
-  <!-- ===================================================
-       VALUES SECTION
-  ==================================================== -->
   <url>
-
     <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#values
+      https://techconnectlearninghub.github.io/techconnect-static-site/resources/pages/blog.html
     </loc>
-
     <priority>0.9</priority>
-
   </url>
 
-  <!-- ===================================================
-       AREAS SECTION
-  ==================================================== -->
   <url>
-
     <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#areas
+      https://techconnectlearninghub.github.io/techconnect-static-site/resources/pages/learning-guides.html
     </loc>
-
-    <priority>0.9</priority>
-
-  </url>
-
-  <!-- ===================================================
-       TOPICS SECTION
-  ==================================================== -->
-  <url>
-
-    <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#topics
-    </loc>
-
-    <priority>0.9</priority>
-
-  </url>
-
-  <!-- ===================================================
-       APPROACH SECTION
-  ==================================================== -->
-  <url>
-
-    <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#approach
-    </loc>
-
     <priority>0.8</priority>
-
   </url>
 
-  <!-- ===================================================
-       AUDIENCE SECTION
-  ==================================================== -->
   <url>
-
     <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#audience
+      https://techconnectlearninghub.github.io/techconnect-static-site/resources/pages/workshops.html
     </loc>
-
     <priority>0.8</priority>
-
   </url>
 
-  <!-- ===================================================
-       TEAM SECTION
-  ==================================================== -->
   <url>
-
     <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#team
+      https://techconnectlearninghub.github.io/techconnect-static-site/resources/pages/community-resources.html
     </loc>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <!-- ===================================================
-       PARTNERS SECTION
-  ==================================================== -->
-  <url>
-
-    <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#partners
-    </loc>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <!-- ===================================================
-       CONTACT SECTION
-  ==================================================== -->
-  <url>
-
-    <loc>
-      https://techconnectlearninghub.github.io/techconnect-static-site/#contact
-    </loc>
-
     <priority>0.8</priority>
-
   </url>
 
 </urlset>
