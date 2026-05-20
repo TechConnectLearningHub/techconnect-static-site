@@ -386,13 +386,32 @@
 
     </a>
 
-    <a href="#resources"
-      data-section="resources"
-      data-mobile-close>
+    <!-- Resources Dropdown -->
+    <!-- RESOURCES ACCORDION -->
+   <div class="mobile-dropdown">
 
-      Resources
+      <button class="mobile-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobileResourcesMenu">
 
-    </a>
+        <span>Resources</span>
+        <span class="mobile-dropdown-icon">+</span>
+
+      </button>
+
+      <div class="mobile-dropdown-menu"
+          id="mobileResourcesMenu">
+
+        <a href="./resources/pages/blog.html" data-mobile-close>Blogs</a>
+        <a href="./resources/pages/faq.html" data-mobile-close>FAQ</a>
+        <a href="./resources/blogs/cloud-computing.html" data-mobile-close>Cloud Computing</a>
+        <a href="./resources/blogs/mulesoft.html" data-mobile-close>MuleSoft</a>
+        <a href="./resources/blogs/api-integration.html" data-mobile-close>APIs & Integration</a>
+
+      </div>
+
+    </div>
 
     <a href="#team"
       data-section="team"
