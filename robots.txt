@@ -6,6 +6,9 @@
 
 # Allow all search engines
 User-agent: *
+
+# Allow all pages
 Allow: /
 
+# Sitemap location
 Sitemap: https://techconnectlearninghub.github.io/techconnect-static-site/sitemap.xml
