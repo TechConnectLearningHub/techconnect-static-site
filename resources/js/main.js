@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     ["topics-section", "./resources/sections/topics.html"],
 
+    /* ============================================
+      RESOURCES SECTION
+    ============================================ */
+
     ["team-section", "./resources/sections/team.html"],
 
     ["partners-section", "./resources/sections/partners.html"],

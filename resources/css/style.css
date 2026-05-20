@@ -121,6 +121,64 @@ img {
     nav a { padding: 8px 0; border-bottom: 2px solid transparent; }
     nav a:hover, nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
 
+    /* =====================================================
+          DESKTOP NAVIGATION DROPDOWN
+        ===================================================== */
+
+        .nav-dropdown {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .nav-dropdown-trigger {
+          padding: 8px 0;
+          border-bottom: 2px solid transparent;
+          font-weight: 750;
+          cursor: pointer;
+        }
+
+        .nav-dropdown-trigger:hover {
+          color: var(--primary);
+          border-bottom-color: var(--primary);
+        }
+
+        .nav-dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 260px;
+          background: #ffffff;
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+          padding: 10px;
+          display: none;
+          flex-direction: column;
+          z-index: 9999;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+          display: block;
+        }
+
+        .nav-dropdown-menu a {
+          display: block;
+          width: 100%;
+          padding: 12px 14px;
+          border-radius: 10px;
+          border-bottom: none;
+          font-weight: 700;
+          color: var(--ink);
+          white-space: nowrap;
+        }
+
+        .nav-dropdown-menu a:hover {
+          background: var(--primary-soft);
+          color: var(--primary);
+          border-bottom: none;
+        }
     .header-cta, .btn {
       display: inline-flex;
       align-items: center;
@@ -822,21 +880,195 @@ img {
       cursor: pointer;
     }
 
-    @media (max-width: 1100px) {
-      nav {
-        display: none;
-      }
+/* =====================================================
+   MOBILE NAVIGATION TOGGLE
+===================================================== */
 
-      .mobile-menu-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
+@media (max-width: 1100px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
+/* =====================================================
+   SKILL CARD LABEL OVERLAY
+===================================================== */
 
+.cloud-card {
+  position: relative;
+}
 
+.cloud-card span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--primary-dark);
+  font-weight: 850;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
 
+/* =====================================================
+   BRAND LEARNING JOURNEY - RESPONSIVE SAFE
+===================================================== */
 
+.arrow-process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 40px 0 34px;
+}
 
+.arrow-step {
+  display: grid;
+  grid-template-columns: 64px 48px 1fr;
+  align-items: center;
+  gap: 16px;
 
+  min-height: 150px;
+  padding: 26px;
+
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 2px solid #1557d6;
+  border-radius: 24px;
+
+  box-shadow: 0 18px 42px rgba(21, 87, 214, 0.10);
+  transition: 0.25s ease;
+}
+
+.arrow-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 58px rgba(21, 87, 214, 0.16);
+}
+
+.arrow-step-blue {
+  border-color: #1557d6;
+}
+
+.arrow-step-green {
+  border-color: #6d28d9;
+}
+
+.arrow-step-purple {
+  border-color: #f97316;
+}
+
+.arrow-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: #eef5ff;
+  font-size: 1.8rem;
+}
+
+.arrow-number {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #1557d6;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.arrow-step-green .arrow-number {
+  background: #6d28d9;
+}
+
+.arrow-step-purple .arrow-number {
+  background: #f97316;
+}
+
+.arrow-text h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.arrow-step-blue .arrow-text h3 {
+  color: #1557d6;
+}
+
+.arrow-step-green .arrow-text h3 {
+  color: #6d28d9;
+}
+
+.arrow-step-purple .arrow-text h3 {
+  color: #f97316;
+}
+
+.arrow-text p {
+  margin: 0;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .arrow-process {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow-step {
+    grid-template-columns: 64px 48px 1fr;
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .arrow-step {
+    grid-template-columns: 52px 40px 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .arrow-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+
+  .arrow-number {
+    width: 40px;
+    height: 40px;
+  }
+
+  .arrow-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .arrow-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE LEARNING JOURNEY
+===================================================== */
+
+@media (max-width: 900px) {
+  .arrow-process {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow-step,
+  .arrow-step:first-child,
+  .arrow-step:last-child {
+    clip-path: none;
+    border-radius: 22px;
+    grid-template-columns: 60px 42px 1fr;
+    padding: 24px;
+  }
+}
+}
