@@ -8,14 +8,19 @@
 
   Includes:
   - Short section heading
-  - Interactive 3-step learning path
+  - Interactive 3-step flip card learning path
   - Practical ICT skill cards
   - Upcoming events board
+
+  Fix notes:
+  - Flip cards use position:absolute + inset:0 on both faces
+  - No duplicate or conflicting height declarations
+  - Colour variants applied via arrow-step-* on .flip-card wrapper
+  - tabindex="0" enables keyboard flip (focus-within trigger)
 -->
 
 <section id="areas" class="areas">
 
-  <!-- Main content wrapper -->
   <div class="container areas-layout">
 
     <!-- =================================================
@@ -23,81 +28,108 @@
     ================================================== -->
     <div class="section-head professional-head hero-copy">
 
-      <!-- Small category label -->
       <div class="eyebrow">
         Community-driven ICT learning
       </div>
 
-      <!-- Main heading -->
       <h2>
         Explore Practical
         <span class="blue">ICT Skills</span>
       </h2>
 
-      <!-- =============================================
-              ARROW LEARNING JOURNEY
-          ============================================= -->
+    </div>
 
-        <div class="arrow-process">
+    <!-- =================================================
+         FLIP CARD LEARNING JOURNEY
+    ================================================== -->
+    <!--
+      HOW THE FLIP WORKS:
+      - .flip-card          → sets perspective + fixed height
+      - .flip-card-inner    → rotates on hover/focus
+      - .flip-card-front    → position:absolute; inset:0  (fills parent)
+      - .flip-card-back     → position:absolute; inset:0  (fills parent, pre-rotated 180deg)
+      - Colour variant class (arrow-step-blue etc.) goes on .flip-card
+    -->
 
-          <!-- STEP 1 -->
-          <div class="arrow-step arrow-step-blue">
+    <div class="arrow-process">
 
-            <div class="arrow-icon">🧭</div>
+      <!-- CARD 1 — Keep it simple -->
+      <div class="flip-card arrow-step-blue" tabindex="0">
+        <div class="flip-card-inner">
 
-            <div class="arrow-number">1</div>
-
-            <div class="arrow-text">
-              <h3>Explore</h3>
-
-              <p>
-                Find technology areas that match your interest.
-              </p>
-            </div>
-
+          <div class="flip-card-front">
+            <div class="icon">🧭</div>
+            <h3>Keep it simple</h3>
           </div>
 
-          <!-- STEP 2 -->
-          <div class="arrow-step arrow-step-green">
-
-            <div class="arrow-icon">💻</div>
-
-            <div class="arrow-number">2</div>
-
-            <div class="arrow-text">
-              <h3>Practice</h3>
-
-              <p>
-                Learn with simple real-world examples.
-              </p>
-            </div>
-
-          </div>
-
-          <!-- STEP 3 -->
-          <div class="arrow-step arrow-step-purple">
-
-            <div class="arrow-icon">🚀</div>
-
-            <div class="arrow-number">3</div>
-
-            <div class="arrow-text">
-              <h3>Grow</h3>
-
-              <p>
-                Build confidence through community support.
-              </p>
-            </div>
-
+          <div class="flip-card-back">
+            <h3>Simple Learning</h3>
+            <ul>
+              <li>Step-by-step guidance</li>
+              <li>Beginner-friendly explanations</li>
+              <li>Real-world examples</li>
+              <li>Easy learning pathways</li>
+            </ul>
           </div>
 
         </div>
+      </div>
+
+      <!-- CARD 2 — Make it practical -->
+      <div class="flip-card arrow-step-orange" tabindex="0">
+        <div class="flip-card-inner">
+
+          <div class="flip-card-front">
+            <div class="icon">💻</div>
+            <h3>Make it practical</h3>
+          </div>
+
+          <div class="flip-card-back">
+            <h3>Practical Experience</h3>
+            <ul>
+              <li>Enterprise-focused examples</li>
+              <li>Technology workflows</li>
+              <li>Tool demonstrations</li>
+              <li>Industry-based learning</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 3 — Grow together -->
+      <div class="flip-card arrow-step-purple" tabindex="0">
+        <div class="flip-card-inner">
+
+          <div class="flip-card-front">
+            <div class="icon">🚀</div>
+            <h3>Grow together</h3>
+          </div>
+
+          <div class="flip-card-back">
+            <h3>Community Growth</h3>
+            <ul>
+              <li>Peer learning support</li>
+              <li>Mentoring opportunities</li>
+              <li>Collaborative workshops</li>
+              <li>Shared technology knowledge</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /.arrow-process -->
+
+    <!-- Accessibility / discoverability hint -->
+    <p class="flip-hint">↕ Hover a card to flip it</p>
 
     <!-- =================================================
          PRACTICAL ICT SKILL CARDS
     ================================================== -->
     <!--
-      Each card opens the Topics section.
+      Each card links to the Topics section.
+      Image src paths unchanged from original.
     -->
     <div class="areas-grid">
 
@@ -105,71 +137,64 @@
         <img src="./resources/images/webp/cloud-computing.webp"
              loading="lazy"
              alt="Cloud Computing">
-        <span>Cloud Computing</span>
       </a>
 
       <a class="cloud-card" href="#topics" data-section="topics">
         <img src="./resources/images/webp/jira-confluence.webp"
              loading="lazy"
              alt="Jira and Confluence">
-        <span>Jira &amp; Confluence</span>
       </a>
 
       <a class="cloud-card" href="#topics" data-section="topics">
         <img src="./resources/images/webp/api-integration.webp"
              loading="lazy"
              alt="API and Integration">
-        <span>APIs &amp; Integration</span>
       </a>
 
       <a class="cloud-card" href="#topics" data-section="topics">
         <img src="./resources/images/webp/business-analyst.webp"
              loading="lazy"
              alt="Business Analysis">
-        <span>Business Analysis</span>
       </a>
 
       <a class="cloud-card" href="#topics" data-section="topics">
         <img src="./resources/images/webp/MuleSoft.webp"
              loading="lazy"
              alt="MuleSoft">
-        <span>MuleSoft</span>
       </a>
 
-    </div>
+    </div><!-- /.areas-grid -->
 
     <!-- =================================================
          UPCOMING EVENTS BOARD
     ================================================== -->
-    <section class="events-card events-wide main-events">
+    <section class="events-card main-events">
 
-      <!-- Events header -->
       <div class="events-card-header">
         📅 Upcoming Events
       </div>
 
-      <!-- Scrolling events list -->
       <div class="events-card-body">
         <div class="events-card-scroll">
 
-          <span>☁️ Cloud Basics Session • Coming Soon</span>
-          <span>🔗 API Workshop • Coming Soon</span>
-          <span>📋 Jira &amp; Confluence • Coming Soon</span>
-          <span>⚡ MuleSoft Meetup • Coming Soon</span>
-          <span>🎓 Career Mentorship • Coming Soon</span>
+          <span>☁️ Cloud Basics Session &bull; Coming Soon</span>
+          <span>🔗 API Workshop &bull; Coming Soon</span>
+          <span>📋 Jira &amp; Confluence &bull; Coming Soon</span>
+          <span>⚡ MuleSoft Meetup &bull; Coming Soon</span>
+          <span>🎓 Career Mentorship &bull; Coming Soon</span>
 
-          <!-- Duplicate list for smooth loop animation -->
-          <span>☁️ Cloud Basics Session • Coming Soon</span>
-          <span>🔗 API Workshop • Coming Soon</span>
-          <span>📋 Jira &amp; Confluence • Coming Soon</span>
-          <span>⚡ MuleSoft Meetup • Coming Soon</span>
-          <span>🎓 Career Mentorship • Coming Soon</span>
+          <!-- Duplicate list for seamless loop -->
+          <span>☁️ Cloud Basics Session &bull; Coming Soon</span>
+          <span>🔗 API Workshop &bull; Coming Soon</span>
+          <span>📋 Jira &amp; Confluence &bull; Coming Soon</span>
+          <span>⚡ MuleSoft Meetup &bull; Coming Soon</span>
+          <span>🎓 Career Mentorship &bull; Coming Soon</span>
 
         </div>
       </div>
 
-    </section>
+    </section><!-- /.events-card -->
 
-  </div>
+  </div><!-- /.container -->
 
-</section>
+</section><!-- /#areas -->

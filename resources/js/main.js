@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     ["values-section", "./resources/sections/values.html"],
 
-    ["approach-section", "./resources/sections/approach.html"],
-
     ["audience-section", "./resources/sections/audience.html"],
 
     ["topics-section", "./resources/sections/topics.html"],
