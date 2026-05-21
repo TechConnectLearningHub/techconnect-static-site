@@ -105,6 +105,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   */
   initialiseMobileMenu();
 
+  initialiseContactForm();
+
   /* =====================================================
      HANDLE DIRECT URL HASHES
   ===================================================== */
@@ -370,5 +372,83 @@ function closeMobileMenu() {
 
   /* Remove open class */
   mobileMenu.classList.remove("open");
+
+}
+
+
+/* =========================================================
+   CONTACT FORM HANDLER
+   
+   TWO CHANGES NEEDED IN main.js:
+   
+   1. Inside the section loader for..of loop, after this line:
+         target.innerHTML = await response.text();
+      Add:
+         if (targetId === "contact-section") {
+           initialiseContactForm();
+         }
+
+   2. Add this full function at the bottom of main.js.
+========================================================= */
+
+function initialiseContactForm() {
+
+  const btn = document.getElementById("ct-submit-btn");
+
+  if (!btn) {
+    console.warn("Contact form button not found.");
+    return;
+  }
+
+  btn.addEventListener("click", function () {
+
+    const emailInput  = document.getElementById("ct-email");
+    const nameInput   = document.getElementById("ct-name");
+    const reasonInput = document.getElementById("ct-reason");
+    const msgInput    = document.getElementById("ct-message");
+
+    const email   = emailInput  ? emailInput.value.trim()  : "";
+    const name    = nameInput   ? nameInput.value.trim()   : "";
+    const reason  = reasonInput ? reasonInput.value        : "";
+    const message = msgInput    ? msgInput.value.trim()    : "";
+
+    /* Validate email */
+    if (!email) {
+      alert("Please enter your email address.");
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    /* Basic email format check */
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    /* Validate reason */
+    if (!reason) {
+      alert("Please select a reason for reaching out.");
+      if (reasonInput) reasonInput.focus();
+      return;
+    }
+
+    /* Build mailto */
+    const subject = "TechConnect Enquiry: " + reason;
+
+    let body = "";
+    if (name)    body += "Name: "    + name    + "\n";
+                 body += "Email: "   + email   + "\n";
+                 body += "Reason: "  + reason  + "\n\n";
+    if (message) body += "Message:\n" + message;
+
+    const mailto = "mailto:hello@techconnectlearninghub.org"
+                 + "?subject=" + encodeURIComponent(subject)
+                 + "&body="    + encodeURIComponent(body);
+
+    window.location.href = mailto;
+
+  });
 
 }

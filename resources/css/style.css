@@ -200,7 +200,7 @@ nav a:hover, nav a.active { color: var(--primary); border-bottom-color: var(--pr
 .hero {
   background: #f8fbff;
   border-bottom: 1px solid var(--line);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   padding: 0;
 }
@@ -263,12 +263,13 @@ h1 {
 
 .hero-image {
   display: block;
-  min-height: 500px;
-  background: url('../images/webp/techconnect-cover.webp') center / cover no-repeat;
-  border-radius: 0;
+  width: min(1320px, calc(100% - 40px));
+  min-height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0 0 26px 26px;
   box-shadow: none;
-  margin-top: 0;
-  width: 100%;
+  background: url('../images/webp/techconnect-cover.webp') center / cover no-repeat;
 }
 
 section { padding: 64px 0; }
@@ -855,7 +856,7 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   .hero-copy { max-width: 100%; }
   h1 { font-size: clamp(1.7rem, 3.2vw, 2.8rem); max-width: 100%; }
   .hero-copy p { max-width: 90%; }
-  .hero-image { min-height: 400px; }
+  .hero-image { min-height: 360px; }
   .areas-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
   .foundation-grid, .topic-grid { grid-template-columns: repeat(2, 1fr); }
   .approach-intro, .split, .contact-grid { grid-template-columns: 1fr; }
@@ -884,7 +885,7 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   .brand img { width: 46px; height: 46px; }
   .header-cta { min-height: 40px; padding: 0 14px; font-size: 0.9rem; }
   .hero { padding: 0; }
-  .hero-image { min-height: 300px; }
+  .hero-image { width: 100%; min-height: 260px; border-radius: 0; }
   .hero-grid { min-height: auto; padding: 36px 0 28px; gap: 20px; }
   h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); max-width: 100%; }
   .hero-copy p { max-width: 100%; font-size: 1rem; }
@@ -989,7 +990,6 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
     padding: 22px 20px;
   }
 }
-
 
 /* =========================================
    BLOG PAGES — CLEAN FINAL VERSION
@@ -1457,51 +1457,6 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   margin-top: auto;
 }
 .mobile-dropdown {
-  width: 100%;
-}
-
-.mobile-dropdown-toggle {
-  width: 100%;
-  border: none;
-  background: none;
-  padding: 14px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: left;
-  color: #0f172a;
-  cursor: pointer;
-}
-
-.mobile-dropdown-menu {
-  padding-left: 20px;
-}
-
-.mobile-dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  color: #475569;
-}
-.mobile-dropdown-title {
-  padding: 14px 20px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.mobile-dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.mobile-dropdown-menu a {
-  padding: 12px 20px;
-  font-size: 1rem;
-  color: #475569;
-  border-bottom: 1px solid #e2e8f0;
-}
-.mobile-dropdown {
   border-bottom: 1px solid var(--line);
 }
 
@@ -1551,327 +1506,64 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
 .mobile-dropdown.open .mobile-dropdown-icon {
   transform: rotate(45deg);
 }
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  padding: 90px 0 110px;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: #eef4ff;
-  color: var(--primary);
-  font-weight: 700;
-  margin-bottom: 22px;
-}
-
-.hero-content h1 {
-  font-size: clamp(1.8rem, 2vw, 2rem);
-  line-height: 1.08;
-  letter-spacing: -1.5px;
-  max-width: 980px;
-  margin-bottom: 22px;
-}
-
-.hero-content p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 640px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 18px;
-  margin-top: 36px;
-  flex-wrap: wrap;
-}
 
 /* =====================================================
-   HOMEPAGE HERO CTA + SKILLS MARQUEE
-   Add this to the end of resources/css/style.css
+   HOMEPAGE SKILLS MARQUEE
 ===================================================== */
-
-.hero {
-  background: #f8fbff;
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.hero-image {
-  min-height: 460px;
-  background: url("../images/webp/techconnect-cover.webp") center / cover no-repeat;
-}
-
-.hero-cta-wrap {
-  position: relative;
-  margin-top: -72px;
-  z-index: 2;
-}
-
-.hero-cta-card {
-  max-width: 820px;
-  padding: 34px 38px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid #dbe4ff;
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
-  backdrop-filter: blur(14px);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: #eef5ff;
-  color: var(--primary);
-  font-size: 0.9rem;
-  font-weight: 850;
-  margin-bottom: 18px;
-}
-
-.hero-cta-card h1 {
-  max-width: 760px;
-  margin: 0 0 18px;
-  font-size: clamp(2.25rem, 4.5vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
-}
-
-.hero-cta-card p {
-  max-width: 680px;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
-  margin-bottom: 24px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* Skills marquee */
 .skills-marquee {
+  width: 100%;
   overflow: hidden;
-  padding: 34px 0 44px;
+  padding: 18px 0 34px;
+  background: #f8fbff;
 }
 
 .skills-track {
   display: flex;
-  gap: 22px;
+  gap: 20px;
   width: max-content;
-  animation: skillsMarquee 30s linear infinite;
-  animation-duration: 28000ms;
+  animation: skillsScroll 28s linear infinite;
 }
 
 .skills-marquee:hover .skills-track {
   animation-play-state: paused;
 }
 
+.skills-track img,
 .skill-marquee-card {
-  width: 245px;
+  width: 220px;
   flex: 0 0 auto;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #dbe4ff;
   background: #ffffff;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #dbe4ff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.skill-marquee-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(21, 87, 214, 0.16);
+.skills-track img {
+  height: 120px;
+  object-fit: cover;
 }
 
 .skill-marquee-card img {
   width: 100%;
-  height: 140px;
+  height: 120px;
   object-fit: cover;
-}
-
-@keyframes skillsMarquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-image {
-    min-height: 320px;
-  }
-
-  .hero-cta-wrap {
-    margin-top: -36px;
-  }
-
-  .hero-cta-card {
-    padding: 28px 24px;
-  }
-
-  .hero-cta-card h1 {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-
-  .skill-marquee-card {
-    width: 210px;
-  }
-
-  .skill-marquee-card img {
-    height: 120px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .skills-track {
-    animation-duration: 24s;
-  }
-}
-.skills-marquee {
-  width: 100%;
-  overflow: hidden;
-  padding: 24px 0 34px;
-  background: #f8fbff;
-}
-
-.skills-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: skillsScroll 28s linear infinite;
-}
-
-.skills-track img {
-  width: 240px;
-  height: 135px;
-  object-fit: cover;
-  flex: 0 0 auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 @keyframes skillsScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-@media (max-width: 768px) {
-  .skills-track img {
-    width: 200px;
-    height: 112px;
-  }
-}
-.hero {
-  background: #f8fbff;
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.hero-clean-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  gap: 48px;
-  padding: 56px 0 34px;
-}
-
-.hero-clean-copy h1 {
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
-  margin-bottom: 22px;
-}
-
-.hero-clean-copy p {
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-}
-
-.hero-clean-image img {
-  width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
-}
-
-.skills-marquee {
-  width: 100%;
-  overflow: hidden;
-  padding: 22px 0 40px;
-}
-
-.skills-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: skillsScroll 28s linear infinite;
-}
-
-.skills-track img {
-  width: 240px;
-  height: 135px;
-  object-fit: cover;
-  flex: 0 0 auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-}
-
-@keyframes skillsScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-clean-grid {
-    grid-template-columns: 1fr;
-    padding: 40px 0 24px;
-  }
-
-  .hero-clean-image {
-    order: -1;
-  }
-
-  .skills-track img {
-    width: 200px;
-    height: 112px;
-  }
-}
+/* =====================================================
+   VALUES + SKILLS SECTION
+===================================================== */
 .card-hint {
   margin-top: 0.75rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: #64748b;
   opacity: 0.85;
-}
-
-.mini-cta:hover {
-  text-decoration: underline;
 }
 
 .values-cta {
@@ -1902,26 +1594,6 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: #2563eb;
-  color: #ffffff;
-}
-
-.btn-secondary {
-  background: #ffffff;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
-}
 .values-skills-section {
   background: var(--soft-bg);
 }
@@ -1953,7 +1625,7 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
 }
 
 .values-panel h2 {
-  font-size: clamp(1.6rem, 2vw, 2rem) !important;
+  font-size: clamp(1.6rem, 2vw, 2rem);
   margin-bottom: 14px;
 }
 
@@ -1973,12 +1645,12 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   display: flex;
   gap: 14px;
   align-items: flex-start;
+  min-height: 120px;
   padding: 14px;
   border-radius: 18px;
   background: #f8fbff;
   border: 1px solid #dbeafe;
   transition: 0.25s ease;
-  min-height: 120px;
 }
 
 .compact-value-card:hover {
@@ -2008,7 +1680,6 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.5;
-  align-items: center;
 }
 
 .values-panel-cta {
@@ -2042,13 +1713,68 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   border-color: #ffffff;
 }
 
+.values-purpose-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.values-purpose-left,
+.values-purpose-right {
+  min-width: 0;
+}
+
+/* =====================================================
+   RENDERING STABILITY
+===================================================== */
+.flip-card-inner,
+.flip-card-front,
+.events-card-scroll,
+.events-card-body,
+#areas {
+  transform: translateZ(0);
+}
+
+.flip-card-inner,
+.flip-card-front,
+.flip-card-back,
+.events-card-scroll {
+  will-change: transform;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg) translateZ(0);
+}
+
+.events-card-scroll {
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  animation-duration: 12000ms;
+}
+
+.events-card-body {
+  overflow: hidden;
+  position: relative;
+}
+
+/* =====================================================
+   FINAL RESPONSIVE ADJUSTMENTS
+===================================================== */
 @media (max-width: 1100px) {
-  .values-skills-grid {
+  .values-skills-grid,
+  .values-purpose-grid {
     grid-template-columns: 1fr;
   }
 
   .compact-process {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .values-purpose-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2059,79 +1785,21 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   }
 
   .values-panel {
-    padding: 28px  !important;
+    padding: 28px;
   }
 
-  .values-panel-actions .btn {
+  .values-panel-actions .btn,
+  .hero-actions .btn {
     width: 100%;
   }
-}
-.values-purpose-grid {
-  display: grid !important;
-  grid-template-columns: 1.25fr 0.75fr !important;
-  gap: 48px !important;
-  align-items: start;
-}
 
-.values-purpose-left,
-.values-purpose-right {
-  min-width: 0;
-}
-
-.values-purpose-right {
-  position: static;
-}
-
-@media (max-width: 900px) {
-  .values-purpose-grid {
-    grid-template-columns: 1fr !important;
+  .skills-track img,
+  .skill-marquee-card {
+    width: 190px;
   }
-}
-/* =====================================================
-                  RENDERING FIX 
-   Fixes: flip cards and events ticker not displaying
-   until user interaction on load.
-===================================================== */
 
-/* Force GPU layer promotion on flip cards immediately */
-.flip-card-inner {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Ensure front face is always visible on load */
-.flip-card-front {
-  will-change: transform;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-/* Ensure back face is pre-rendered but hidden */
-.flip-card-back {
-  will-change: transform;
-  transform: rotateY(180deg) translateZ(0);
-  -webkit-transform: rotateY(180deg) translateZ(0);
-}
-
-/* Fix: delay animation start so browser finishes
-   painting the layout before the ticker moves */
-.events-card-scroll {
-  will-change: transform;
-  transform: translateZ(0);
-  animation-delay: 0.3s;
-  animation-fill-mode: both;
-  animation-duration: 12000ms;
-}
-
-/* Fix: promote events container to its own layer */
-.events-card-body {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Fix: ensure the section itself is visible on load */
-#areas {
-  transform: translateZ(0);
+  .skills-track img,
+  .skill-marquee-card img {
+    height: 106px;
+  }
 }
