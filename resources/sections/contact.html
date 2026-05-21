@@ -1,184 +1,393 @@
 <!-- =========================================================
-     CONTACT SECTION: Connection & Support
+     CONTACT SECTION
 ========================================================= -->
-<!--
-  Purpose:
-  Provides contact details and connection options
-  for learners, volunteers, partners, and community
-  collaborators.
 
-  Includes:
-  - Community connection message
-  - Contact highlights
-  - Email/location details
-  - Contact action buttons
+<section id="contact" class="areas">
+  <div class="container">
 
-  Note:
-  Uses data-section instead of inline onclick
-  for better security and cleaner JavaScript handling.
--->
+    <div class="ct-wrap">
 
-<details id="contact"
-         class="content-section contact">
+      <!-- Hero — spans both columns -->
+      <div class="ct-hero">
+        <div class="ct-hero-left">
+          <p class="kicker">Contact us</p>
+          <h2>Let's build something <span class="blue">together</span></h2>
+          <p>Reach out for collaboration, volunteering, workshops, mentoring, partnerships or community initiatives.</p>
+        </div>
+        <div class="ct-chips">
+          <span class="ct-chip">🤝 Collaboration</span>
+          <span class="ct-chip">🎓 Learning</span>
+          <span class="ct-chip">🚀 Career Growth</span>
+        </div>
+      </div>
 
-  <!-- =====================================================
-       ACCORDION HEADER
-  ====================================================== -->
-  <summary class="section-toggle">
+      <!-- Left: Contact Info + Socials -->
+      <div class="ct-details">
 
-    <!-- Section title -->
-    <span>
-      Contact &amp; Community Connection
-    </span>
-
-    <!-- Expand/collapse icon -->
-    <span class="toggle-icon">
-      ⌵
-    </span>
-
-  </summary>
-
-  <!-- =====================================================
-       SECTION CONTENT
-  ====================================================== -->
-  <div class="section-content">
-
-    <div class="container contact-grid">
-
-      <!-- =================================================
-           CONTACT INTRODUCTION COLUMN
-      ================================================== -->
-      <div>
-
-        <!-- Intro message -->
-        <p>
-          Reach out for collaboration, volunteering, workshops,
-          mentoring, partnerships, or community initiatives.
-        </p>
-
-        <!-- =============================================
-             CONTACT HIGHLIGHT CARDS
-        ============================================== -->
-        <div class="contact-highlights">
-
-          <!-- Highlight 1 -->
-          <div class="contact-highlight">
-            <span>🤝</span>
-            <p>Community Collaboration</p>
+        <div class="ct-row">
+          <div class="ct-row-ico" style="background:#EEF5FF">📧</div>
+          <div>
+            <div class="ct-row-label">Email</div>
+            <div class="ct-row-val"><a href="mailto:hello@techconnectlearninghub.org">hello@techconnectlearninghub.org</a></div>
           </div>
+        </div>
 
-          <!-- Highlight 2 -->
-          <div class="contact-highlight">
-            <span>🎓</span>
-            <p>Learning Support</p>
+        <div class="ct-row">
+          <a href="https://maps.google.com/?q=Melbourne,Australia" target="_blank" rel="noopener"
+             class="ct-row-ico ct-row-ico-link" style="background:#ECFDF5" title="Open in Google Maps">📍</a>
+          <div>
+            <div class="ct-row-label">Location</div>
+            <div class="ct-row-val">Melbourne, Australia</div>
           </div>
+        </div>
 
-          <!-- Highlight 3 -->
-          <div class="contact-highlight">
-            <span>🚀</span>
-            <p>Career Growth</p>
+        <div class="ct-row">
+          <div class="ct-row-ico" style="background:#FFF7ED">🌐</div>
+          <div>
+            <div class="ct-row-label">Community</div>
+            <div class="ct-row-val">TechConnect Learning Hub</div>
           </div>
+        </div>
 
+        <div class="ct-social-strip">
+          <div class="ct-social-label">Find us on social</div>
+          <div class="ct-social">
+            <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-ig">📸 Instagram</a>
+            <a href="https://wa.me/message/PLACEHOLDER" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-wa">💬 WhatsApp</a>
+            <a href="https://facebook.com/placeholder" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-fb">👥 Facebook</a>
+            <a href="https://www.linkedin.com/in/chaithanyagunturi/" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-li">🔗 LinkedIn</a>
+          </div>
         </div>
 
       </div>
 
-      <!-- =================================================
-           CONTACT DETAILS PANEL
-      ================================================== -->
-      <article class="panel contact-panel">
+      <!-- Right: Form -->
+      <div class="ct-form-panel">
 
-        <!-- Email row -->
-        <div class="contact-row">
-          <strong>Email:</strong>
-          hello@techconnectlearninghub.org
-        </div>
+        <h3>Send us a message</h3>
 
-        <!-- Location row -->
-        <div class="contact-row">
-          <strong>Location:</strong>
-          Melbourne, Australia
-        </div>
+        <form class="ct-form" id="ct-contact-form" novalidate>
 
-        <!-- Community row -->
-        <div class="contact-row">
-          <strong>Community:</strong>
-          TechConnect Learning Hub
-        </div>
+          <div class="ct-row-fields">
+            <div class="ct-field">
+              <label class="ct-field-label">Name <span class="ct-optional">(optional)</span></label>
+              <input class="ct-input" id="ct-name" type="text" placeholder="Your name" autocomplete="name" />
+            </div>
+            <div class="ct-field">
+              <label class="ct-field-label">Email <span class="ct-req">*</span></label>
+              <input class="ct-input" id="ct-email" type="email" placeholder="Your email" required autocomplete="email" />
+            </div>
+          </div>
 
-        <!-- =============================================
-             CONTACT ACTION BUTTONS
-        ============================================== -->
-        <div class="contact-actions">
+          <div class="ct-field">
+            <label class="ct-field-label">Reason <span class="ct-req">*</span></label>
+            <select class="ct-input" id="ct-reason" required>
+              <option value="" disabled selected>I'm reaching out about...</option>
+              <option value="Joining as a learner">Joining as a learner</option>
+              <option value="Volunteering / Mentoring">Volunteering / Mentoring</option>
+              <option value="Community partnership">Community partnership</option>
+              <option value="Workshop or event">Workshop or event</option>
+              <option value="Something else">Something else</option>
+            </select>
+          </div>
 
-          <!-- Opens user's email client -->
-          <a class="btn btn-primary"
-             href="mailto:hello@techconnectlearninghub.org">
+          <div class="ct-field ct-field-grow">
+            <label class="ct-field-label">Message</label>
+            <textarea class="ct-input ct-textarea" id="ct-message" placeholder="Your message..."></textarea>
+          </div>
 
-            Email Us →
+          <button type="button" class="ct-submit" id="ct-submit-btn">Send Message →</button>
 
-          </a>
+        </form>
 
-          <!-- Opens Team section using data-section -->
-          <a class="btn btn-secondary"
-             href="#team"
-             data-section="team">
 
-            Join the Community →
-
-          </a>
-
-        </div>
-
-      </article>
+      </div>
 
     </div>
 
   </div>
+</section>
 
-</details>
 
 <!-- =========================================================
-     CTA SECTION: Final Call-To-Action Banner
+     ADD TO BOTTOM OF style.css
 ========================================================= -->
-<!--
-  Purpose:
-  Encourages users to connect with TechConnect
-  after reviewing the website content.
+<style>
 
-  Navigation:
-  Uses data-section="contact" so main.js opens
-  the Contact accordion safely without inline JS.
--->
+/* ── Unified grid: hero spans both cols, panels below ── */
+.ct-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
 
-<section class="cta">
+/* ── Hero: spans full width ── */
+.ct-hero {
+  grid-column: 1 / -1;
+  background: var(--soft-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
 
-  <div class="container">
+.ct-hero-left h2 { font-size: clamp(1.4rem, 2vw, 1.8rem); margin-bottom: 8px; }
+.ct-hero-left p  { color: var(--muted); font-size: 0.9rem; line-height: 1.6; max-width: 460px; margin: 0; }
 
-    <div class="cta-content">
+.ct-chips { display: flex; gap: 8px; flex-wrap: wrap; flex-shrink: 0; }
 
-      <!-- CTA heading -->
-      <h2>
-        Building digital skills together.
-      </h2>
+.ct-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
-      <!-- CTA supporting text -->
-      <p>
-        Making technology knowledge easier to access,
-        easier to understand, and easier to apply.
-      </p>
+/* ── Left panel ── */
+.ct-details {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
 
-      <!-- CTA button -->
-      <a class="btn btn-secondary"
-         href="#contact"
-         data-section="contact">
+.ct-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
 
-        Start a Conversation
+.ct-row:last-of-type { border-bottom: none; }
 
-      </a>
+.ct-row-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
 
-    </div>
+.ct-row-ico-link {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
 
-  </div>
+.ct-row-ico-link:hover { transform: scale(1.12); }
 
-</section>
+.ct-row-label { font-size: 0.72rem; color: var(--muted); margin-bottom: 2px; }
+.ct-row-val   { font-size: 0.9rem; font-weight: 700; color: var(--ink); }
+.ct-row-val a { color: var(--primary); text-decoration: none; }
+.ct-row-val a:hover { text-decoration: underline; }
+
+/* ── Social strip — pushed to bottom ── */
+.ct-social-strip {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.ct-social-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.ct-social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.ct-soc-btn {
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+  border: none;
+}
+
+.ct-soc-btn:hover { opacity: 0.85; }
+
+.ct-soc-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+.ct-soc-wa { background: #25d366; }
+.ct-soc-fb { background: #1877f2; }
+.ct-soc-li { background: #0a66c2; }
+
+/* ── Right panel: form ── */
+.ct-form-panel {
+  background: var(--primary);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ct-form-panel h3 {
+  font-size: 1.1rem;
+  font-weight: 850;
+  color: white;
+  margin: 0;
+}
+
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.ct-row-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ct-field-grow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ct-field-grow .ct-textarea { flex: 1; }
+
+.ct-field-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ct-optional { color: rgba(255,255,255,0.35); font-size: 0.65rem; }
+.ct-req      { color: #fca5a5; font-size: 0.72rem; }
+
+.ct-input {
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: white;
+  outline: none;
+  font-family: var(--font);
+  width: 100%;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ct-input::placeholder { color: rgba(255,255,255,0.42); }
+.ct-input option       { color: var(--ink); background: white; }
+.ct-input:focus        { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.7); }
+.ct-input:invalid:not(:placeholder-shown) { border-color: #fca5a5; }
+
+.ct-textarea { resize: none; min-height: 90px; }
+
+/* ── Submit — orange for contrast ── */
+.ct-submit {
+  background: #f97316;
+  color: white;
+  font-size: 0.92rem;
+  font-weight: 850;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  font-family: var(--font);
+  margin-top: auto;
+}
+
+.ct-submit:hover { background: #ea6c0a; transform: translateY(-1px); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ct-wrap { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .ct-hero { flex-direction: column; align-items: flex-start; }
+  .ct-social-strip { margin-top: 14px; }
+}
+
+@media (max-width: 580px) {
+  .ct-row-fields { grid-template-columns: 1fr; }
+  .ct-chips      { display: none; }
+  .ct-social     { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- =========================================================
+     CONTACT FORM SCRIPT
+     Add this just before </body> in your index.html
+========================================================= -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.getElementById('ct-submit-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    var email   = document.getElementById('ct-email').value.trim();
+    var name    = document.getElementById('ct-name').value.trim();
+    var reason  = document.getElementById('ct-reason').value;
+    var message = document.getElementById('ct-message').value.trim();
+
+    if (!email) {
+      alert('Please enter your email address.');
+      document.getElementById('ct-email').focus();
+      return;
+    }
+
+    if (!reason) {
+      alert('Please select a reason for reaching out.');
+      document.getElementById('ct-reason').focus();
+      return;
+    }
+
+    var subject = 'TechConnect Enquiry: ' + reason;
+    var body = '';
+    if (name)    body += 'Name: ' + name + '\n';
+                 body += 'Email: ' + email + '\n';
+                 body += 'Reason: ' + reason + '\n\n';
+    if (message) body += 'Message:\n' + message;
+
+    var mailto = 'mailto:hello@techconnectlearninghub.org'
+               + '?subject=' + encodeURIComponent(subject)
+               + '&body='    + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  });
+});
+</script>
