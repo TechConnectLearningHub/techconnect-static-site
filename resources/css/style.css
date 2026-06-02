@@ -65,6 +65,8 @@ header {
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
+  height: 72px;
+  overflow: hidden;
 }
 
 .nav {
@@ -79,12 +81,12 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 260px;
+  min-width: 200px;
 }
 
 .brand img {
-  width: 54px;
-  height: 54px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
   border-radius: 12px;
   background: white;
@@ -118,7 +120,7 @@ header {
 }
 
 nav { display: flex; align-items: center; gap: 22px; font-weight: 750; color: var(--ink); font-size: 0.94rem; }
-nav a { padding: 8px 0; border-bottom: 2px solid transparent; }
+nav a { padding: 4px 0; border-bottom: 2px solid transparent; }
 nav a:hover, nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
 
 /* =====================================================
@@ -1526,12 +1528,13 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
 
 .skills-marquee:hover .skills-track {
   animation-play-state: paused;
-}
+} 
 
 .skills-track img,
 .skill-marquee-card {
   width: 220px;
-  flex: 0 0 auto;
+  height: 120px;
+  flex: 0 0 220px;
   border-radius: 18px;
   overflow: hidden;
   background: #ffffff;
@@ -1539,15 +1542,14 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.skills-track img {
-  height: 120px;
-  object-fit: cover;
-}
-
+.skills-track img,
 .skill-marquee-card img {
+  display: block;
   width: 100%;
-  height: 120px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
 }
 
 @keyframes skillsScroll {
@@ -1795,11 +1797,96 @@ footer { background: #07172f; color: #cbd5e1; padding: 30px 0; }
 
   .skills-track img,
   .skill-marquee-card {
-    width: 190px;
+    width: 220px;
+    height: 120px;
+    overflow: hidden;
   }
+}
 
-  .skills-track img,
-  .skill-marquee-card img {
-    height: 106px;
-  }
+/* FINAL FIX — homepage skills marquee */
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: skillsScroll 28s linear infinite;
+}
+
+.skills-track > img,
+.skill-marquee-card {
+  width: 220px !important;
+  height: 120px !important;
+  flex: 0 0 220px !important;
+  max-width: 220px !important;
+  max-height: 120px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 6px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #dbe4ff;
+  overflow: hidden;
+}
+
+.skill-marquee-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+/* HEADER FIX */
+header {
+  height: 72px;
+}
+
+header * {
+  line-height: 1.2 !important;
+}
+
+.nav {
+  height: 72px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+}
+
+nav a {
+  padding: 4px 0;
+}
+/* FINAL HOMEPAGE MARQUEE FIX */
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0 34px;
+  background: #f8fbff;
+}
+
+.skills-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: skillsScroll 28s linear infinite;
+}
+
+.skills-track > .cloud-card {
+  width: 320px !important;
+  height: auto !important;
+  flex: 0 0 320px !important;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.skills-track > .cloud-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 0 !important;
 }
