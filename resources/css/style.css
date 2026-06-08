@@ -1890,3 +1890,46 @@ nav a {
   object-position: center center !important;
   padding: 0 !important;
 }
+.tm-tags{
+    display:flex;
+    flex-wrap:wrap;
+    text-align: center;
+    gap:12px;
+}
+.tm-footer-center {
+  justify-content: center;
+  text-align: center;
+}
+.tm-linkedin-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--primary);
+    font-weight:800;
+    font-size:1.1rem;
+    text-decoration:none;
+    transition:.2s ease;
+}
+
+.tm-linkedin-cta:hover{
+    color:var(--primary-dark);
+    transform:translateX(4px);
+}
+
+.tm-linkedin-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 18px;
+    border-radius:999px;
+    background:var(--primary-soft);
+    color:var(--primary);
+    font-weight:800;
+    border:1px solid rgba(21,87,214,.15);
+    transition:.2s ease;
+}
+
+.tm-linkedin-btn:hover{
+    background:var(--primary);
+    color:#fff;
+}
