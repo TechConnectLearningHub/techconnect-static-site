@@ -1890,11 +1890,28 @@ nav a {
   object-position: center center !important;
   padding: 0 !important;
 }
-.tm-tags{
-    display:flex;
-    flex-wrap:wrap;
-    text-align: center;
-    gap:12px;
+.tm-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    line-height: 1;
+
+    background: var(--soft-bg);
+    border: 1px solid var(--line);
+    color: var(--muted);
+
+    white-space: nowrap;
+}
+.tm-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
 }
 .tm-footer-center {
   justify-content: center;
@@ -1932,4 +1949,26 @@ nav a {
 .tm-linkedin-btn:hover{
     background:var(--primary);
     color:#fff;
+}
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.tm-card {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .tm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .tm-grid {
+    grid-template-columns: 1fr;
+  }
 }
