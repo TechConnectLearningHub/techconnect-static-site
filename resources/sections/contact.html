@@ -10,14 +10,14 @@
       <!-- Hero — spans both columns -->
       <div class="ct-hero">
         <div class="ct-hero-left">
-          <p class="kicker">Contact us</p>
-          <h2>Let's build something <span class="blue">together</span></h2>
-          <p>Reach out for collaboration, volunteering, workshops, mentoring, partnerships or community initiatives.</p>
+          <p class="kicker">Join TechConnect</p>
+          <h2>Become part of <span class="blue">TechConnect</span></h2>
+          <p>Follow our journey, register your interest, or reach out for collaboration, volunteering, mentoring and partnerships.</p>
         </div>
         <div class="ct-chips">
-          <span class="ct-chip">🤝 Collaboration</span>
-          <span class="ct-chip">🎓 Learning</span>
-          <span class="ct-chip">🚀 Career Growth</span>
+          <span class="ct-chip">📸 Follow Instagram</span>
+          <span class="ct-chip">🚀 Register Interest</span>
+          <span class="ct-chip">🤝 Collaborate</span>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
           <div class="ct-row-ico" style="background:#EEF5FF">📧</div>
           <div>
             <div class="ct-row-label">Email</div>
-            <div class="ct-row-val"><a href="mailto:hello@techconnectlearninghub.org">hello@techconnectlearninghub.org</a></div>
+            <div class="ct-row-val"><a href="mailto:thetechconnecthub@gmail.com">thetechconnecthub@gmail.com</a></div>
           </div>
         </div>
 
@@ -45,17 +45,15 @@
           <div class="ct-row-ico" style="background:#FFF7ED">🌐</div>
           <div>
             <div class="ct-row-label">Community</div>
-            <div class="ct-row-val">TechConnect Learning Hub</div>
+            <div class="ct-row-val">@thetechconnecthub</div>
           </div>
         </div>
 
         <div class="ct-social-strip">
           <div class="ct-social-label">Find us on social</div>
           <div class="ct-social">
-            <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-ig">📸 Instagram</a>
-            <a href="https://wa.me/message/PLACEHOLDER" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-wa">💬 WhatsApp</a>
-            <a href="https://facebook.com/placeholder" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-fb">👥 Facebook</a>
-            <a href="https://www.linkedin.com/in/chaithanyagunturi/" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-li">🔗 LinkedIn</a>
+            <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-ig">📸 Follow Instagram</a>
+            <a href="https://forms.gle/73fkQG1du3Pq7pGc9" target="_blank" rel="noopener" class="ct-soc-btn ct-soc-form">🚀 Register Interest</a>
           </div>
         </div>
 
@@ -64,7 +62,9 @@
       <!-- Right: Form -->
       <div class="ct-form-panel">
 
-        <h3>Send us a message</h3>
+        <h3>Tell us about yourself</h3>
+        <p class="ct-form-intro">For learners, volunteers and future partners, the best next step is to register interest using our community form.</p>
+        <a href="https://forms.gle/73fkQG1du3Pq7pGc9" class="ct-google-form-btn" target="_blank" rel="noopener">🚀 Open Community Interest Form</a>
 
         <form class="ct-form" id="ct-contact-form" novalidate>
 
@@ -93,10 +93,10 @@
 
           <div class="ct-field ct-field-grow">
             <label class="ct-field-label">Message</label>
-            <textarea class="ct-input ct-textarea" id="ct-message" placeholder="Your message..."></textarea>
+            <textarea class="ct-input ct-textarea" id="ct-message" placeholder="What would you like to learn, contribute, or ask?"></textarea>
           </div>
 
-          <button type="button" class="ct-submit" id="ct-submit-btn">Send Message →</button>
+          <button type="button" class="ct-submit" id="ct-submit-btn">Email TechConnect →</button>
 
         </form>
 
@@ -212,7 +212,7 @@
 
 .ct-social {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 7px;
 }
 
@@ -236,6 +236,10 @@
 .ct-soc-wa { background: #25d366; }
 .ct-soc-fb { background: #1877f2; }
 .ct-soc-li { background: #0a66c2; }
+.ct-soc-form { background: linear-gradient(135deg, #1557d6, #7c3aed); }
+.ct-form-intro { color: rgba(255,255,255,0.86); font-size: 0.88rem; line-height: 1.6; margin: -4px 0 4px; }
+.ct-google-form-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #f97316; color: white; font-weight: 850; text-decoration: none; box-shadow: 0 10px 24px rgba(249,115,22,0.26); }
+.ct-google-form-btn:hover { opacity: 0.92; }
 
 /* ── Right panel: form ── */
 .ct-form-panel {
@@ -383,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function () {
                  body += 'Reason: ' + reason + '\n\n';
     if (message) body += 'Message:\n' + message;
 
-    var mailto = 'mailto:hello@techconnectlearninghub.org'
+    var mailto = 'mailto:thetechconnecthub@gmail.com'
                + '?subject=' + encodeURIComponent(subject)
                + '&body='    + encodeURIComponent(body);
 

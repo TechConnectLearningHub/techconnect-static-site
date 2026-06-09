@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     ["mission-section", "./resources/sections/mission.html"],
 
-    ["values-section", "./resources/sections/values.html"],
+    ["team-section", "./resources/sections/team.html"],
 
     ["audience-section", "./resources/sections/audience.html"],
 
@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     /* ============================================
       RESOURCES SECTION
     ============================================ */
-
-    ["team-section", "./resources/sections/team.html"],
 
     ["partners-section", "./resources/sections/partners.html"],
 

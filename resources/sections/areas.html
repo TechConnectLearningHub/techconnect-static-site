@@ -1,23 +1,6 @@
 <!-- =========================================================
-     EXPLORE SKILLS SECTION
+     EXPLORE SKILLS / FIRST COMMUNITY SESSIONS SECTION
 ========================================================= -->
-<!--
-  Purpose:
-  Presents TechConnect learning areas in a cleaner,
-  more user-friendly experience.
-
-  Includes:
-  - Short section heading
-  - Interactive 3-step flip card learning path
-  - Practical ICT skill cards
-  - Upcoming events board
-
-  Fix notes:
-  - Flip cards use position:absolute + inset:0 on both faces
-  - No duplicate or conflicting height declarations
-  - Colour variants applied via arrow-step-* on .flip-card wrapper
-  - tabindex="0" enables keyboard flip (focus-within trigger)
--->
 
 <section id="areas" class="areas">
 
@@ -29,28 +12,49 @@
     <div class="section-head professional-head hero-copy">
 
       <div class="eyebrow">
-        Community-driven ICT learning
+        First community sessions
       </div>
 
       <h2>
-        Explore Practical
-        <span class="blue">ICT Skills</span>
+        What’s Coming
+        <span class="blue">Next</span>
       </h2>
 
     </div>
 
     <!-- =================================================
+         UPCOMING EVENTS BOARD
+    ================================================== -->
+    <section class="events-card main-events">
+
+      <div class="events-card-header">
+        🚀 First Event Coming Soon
+      </div>
+
+      <div class="events-card-body">
+        <div class="events-card-scroll">
+
+          <span>🤖 AI for Beginners &bull; Register Interest</span>
+          <span>💼 LinkedIn &amp; Resume Workshop &bull; Register Interest</span>
+          <span>☁️ Cloud &amp; Technology Careers &bull; Register Interest</span>
+          <span>🤝 Community Networking Meetup &bull; Register Interest</span>
+          <span>🎓 Career Mentorship &bull; Register Interest</span>
+
+          <!-- Duplicate list for seamless loop -->
+          <span>🤖 AI for Beginners &bull; Register Interest</span>
+          <span>💼 LinkedIn &amp; Resume Workshop &bull; Register Interest</span>
+          <span>☁️ Cloud &amp; Technology Careers &bull; Register Interest</span>
+          <span>🤝 Community Networking Meetup &bull; Register Interest</span>
+          <span>🎓 Career Mentorship &bull; Register Interest</span>
+
+        </div>
+      </div>
+
+    </section><!-- /.events-card -->
+
+    <!-- =================================================
          FLIP CARD LEARNING JOURNEY
     ================================================== -->
-    <!--
-      HOW THE FLIP WORKS:
-      - .flip-card          → sets perspective + fixed height
-      - .flip-card-inner    → rotates on hover/focus
-      - .flip-card-front    → position:absolute; inset:0  (fills parent)
-      - .flip-card-back     → position:absolute; inset:0  (fills parent, pre-rotated 180deg)
-      - Colour variant class (arrow-step-blue etc.) goes on .flip-card
-    -->
-
     <div class="arrow-process">
 
       <!-- CARD 1 — Keep it simple -->
@@ -125,34 +129,23 @@
     <p class="flip-hint">↕ Hover a card to flip it</p>
 
     <!-- =================================================
-         UPCOMING EVENTS BOARD
+         SECTION CTA
     ================================================== -->
-    <section class="events-card main-events">
+    <div class="section-inline-cta">
+      <a class="btn btn-primary instagram-cta"
+         href="https://www.instagram.com/thetechconnecthub/"
+         target="_blank"
+         rel="noopener">
+        📸 Follow @thetechconnecthub
+      </a>
 
-      <div class="events-card-header">
-        📅 Upcoming Events
-      </div>
-
-      <div class="events-card-body">
-        <div class="events-card-scroll">
-
-          <span>☁️ Cloud Basics Session &bull; Coming Soon</span>
-          <span>🔗 API Workshop &bull; Coming Soon</span>
-          <span>📋 Jira &amp; Confluence &bull; Coming Soon</span>
-          <span>⚡ MuleSoft Meetup &bull; Coming Soon</span>
-          <span>🎓 Career Mentorship &bull; Coming Soon</span>
-
-          <!-- Duplicate list for seamless loop -->
-          <span>☁️ Cloud Basics Session &bull; Coming Soon</span>
-          <span>🔗 API Workshop &bull; Coming Soon</span>
-          <span>📋 Jira &amp; Confluence &bull; Coming Soon</span>
-          <span>⚡ MuleSoft Meetup &bull; Coming Soon</span>
-          <span>🎓 Career Mentorship &bull; Coming Soon</span>
-
-        </div>
-      </div>
-
-    </section><!-- /.events-card -->
+      <a class="btn btn-secondary"
+         href="https://forms.gle/73fkQG1du3Pq7pGc9"
+         target="_blank"
+         rel="noopener">
+        🚀 Register Interest
+      </a>
+    </div>
 
   </div><!-- /.container -->
 
