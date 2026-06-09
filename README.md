@@ -680,3 +680,51 @@ This project represents comprehensive documentation of TechConnect Learning Hub'
 [Back to Top](#-techconnect-learning-hub---project-documentation)
 
 </div>
+ 
+
+---
+
+## 🔍 Recent Review & Changes (2026-06-10)
+
+- **Synced formatting:** Updated `resources/blogs/cloud-computing.html` to match the structure and spacing conventions used by `resources/blogs/api-integration.html` for consistency across blog pages.
+- **Normalized stylesheet query-string:** Changed `style.css` cache-bust query in `cloud-computing.html` from `v=16` to `v=15` so it matches `api-integration.html`. Recommendation: centralize cache-busting (build-time or single config) to avoid manual mismatches.
+- **Documentation update:** This note documents the above change and lists issues found during review (see below).
+
+### Issues found & recommendations
+
+- **Inconsistent stylesheet versions:** Some blog pages use `?v=15` while others use `?v=16`. Consider using a single source of truth (build step, deployment timestamp, or config) for cache-busting.
+-
+- **Images missing lazy-loading:** Add `loading="lazy"` to large illustrative images (e.g., hero and diagrams) to improve initial page performance.
+-
+- **Accessibility:** Some pages would benefit from more ARIA labels and contrast checks. Run an automated WCAG audit (axe or Lighthouse) and apply fixes.
+-
+- **Testing gap:** No automated tests were found. Add unit tests for key DOM utilities and an E2E test (Playwright/Cypress) for dynamic section loading and navigation.
+-
+- **Recommendation:** Run an HTML linter/validator (HTMLHint, W3C validator) before publishing batches of content updates.
+
+### Results from quick HTML validation (2026-06-10)
+
+- I ran `npx html-validate` on the blog pages as a precursor to a full Lighthouse run (Lighthouse was blocked by missing Chrome/Chromium).
+- I then applied several small, safe fixes to the blog files and re-ran the validator.
+
+Files updated:
+
+- `resources/blogs/cloud-computing.html`
+- `resources/blogs/api-integration.html`
+- `resources/blogs/mulesoft.html`
+
+What I changed:
+
+- Converted void elements to HTML5 style (removed self-closing `/`):
+  - e.g. `<meta charset="UTF-8" />` → `<meta charset="UTF-8">`, `<link ... />` → `<link ...>` and `<img ... />` → `<img ...>`.
+- Encoded raw ampersands where required (e.g. `&` → `&amp;`) in titles and headings to satisfy `no-raw-characters` rules.
+- Added `loading="lazy"` to large illustrative images (hero banners and diagrams) to improve initial load performance.
+
+Validation outcome:
+
+- Re-running `npx html-validate` against the three blog files returned **no remaining errors** (report saved to `htmlvalidate-blogs.json`).
+
+Notes:
+
+- These edits are stylistic and focused on standards compliance and performance; they do not change visible content or layout.
+- Next step: once Chrome/Chromium is available, run Lighthouse for a deeper performance and accessibility audit.
