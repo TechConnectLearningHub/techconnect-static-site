@@ -1,0 +1,20 @@
+{
+  "name": "techconnect-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.0.0",
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": []
+  }
+}

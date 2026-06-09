@@ -125,6 +125,8 @@
 
 <body>
 
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <!-- =====================================================
        HEADER / TOP NAVIGATION
   ====================================================== -->
@@ -165,7 +167,7 @@
       <!-- ===============================================
      DESKTOP NAVIGATION MENU
 ================================================ -->
-    <nav>
+    <nav role="navigation" aria-label="Primary" >
 
       <!-- ===========================================
           HOME
@@ -325,9 +327,10 @@
       ================================================ -->
       <!-- Hamburger icon -->
       <button class="mobile-menu-btn"
-              type="button"
-              aria-label="Open menu"
-              data-mobile-menu-toggle>
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-mobile-menu-toggle>
 
         ☰
 
@@ -353,8 +356,9 @@
   <!-- =====================================================
        MOBILE SIDE MENU
   ====================================================== -->
-  <div class="mobile-menu"
-       id="mobileMenu">
+    <div class="mobile-menu"
+      id="mobileMenu"
+      aria-hidden="true">
 
     <!-- Close button -->
     <button class="mobile-close"
@@ -367,7 +371,7 @@
     </button>
 
     <!-- Primary mobile CTA -->
-    <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" data-mobile-close>📸 Join Community/a>
+    <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" data-mobile-close>📸 Join Community</a>
 
     <!-- Mobile navigation links -->
     <a href="#home"
@@ -436,7 +440,7 @@
   <!-- =====================================================
        MAIN WEBSITE CONTENT
   ====================================================== -->
-  <main id="home">
+  <main id="main-content">
 
     <!-- ===============================================
          HERO SECTION / COVER IMAGE

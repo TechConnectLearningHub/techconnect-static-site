@@ -53,6 +53,48 @@ img {
   display: block;
 }
 
+/* Accessibility helpers */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus,
+.skip-link:active {
+  position: static;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: 12px 18px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+/* Focus-visible outlines for keyboard users */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 70%, black 30%);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  box-shadow: 0 0 0 4px rgba(21,87,214,0.12);
+  border-radius: 8px;
+}
+
+/* Improve default link visibility for contrast */
+a { color: var(--primary); }
+
 .container {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
