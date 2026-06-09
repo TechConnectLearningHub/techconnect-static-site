@@ -46,42 +46,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     Loop through every configured section
     and inject external HTML content.
   */
+  /* Use a small, testable loader function so fetch can be mocked in tests */
   for (const [targetId, filePath] of sectionFiles) {
-
-    /* Find placeholder div */
-    const target = document.getElementById(targetId);
-
-    /* Skip if div does not exist */
-    if (!target) continue;
-
-    try {
-
-      /* Fetch external html file */
-      const response = await fetch(filePath);
-
-      /* Handle fetch/http errors */
-      if (!response.ok) {
-
-        console.error(
-          `Failed to load ${filePath}: ${response.status}`
-        );
-
-        continue;
-      }
-
-      /* Convert response to html text */
-      target.innerHTML = await response.text();
-
-    } catch (error) {
-
-      /* Handle unexpected fetch errors */
-      console.error(
-        `Error loading ${filePath}:`,
-        error
-      );
-
-    }
-
+    await window.loadSectionFile(targetId, filePath);
   }
 
   /* =====================================================
@@ -222,6 +189,33 @@ function initialiseAccordions() {
 }
 
 /* =========================================================
+   Helper: load a single section file into a placeholder
+   Exposed on window for testing/mocking.
+========================================================= */
+window.loadSectionFile = async function (targetId, filePath) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  try {
+    const response = await fetch(filePath);
+    if (!response.ok) {
+      console.error(`Failed to load ${filePath}: ${response.status}`);
+      return;
+    }
+    target.innerHTML = await response.text();
+
+    /* If we just injected the contact section, initialise contact behaviour */
+    if (targetId === "contact-section") {
+      initialiseContactForm();
+    }
+
+  } catch (err) {
+    console.error(`Error loading ${filePath}:`, err);
+  }
+
+};
+
+/* =========================================================
    NAVIGATION LINK HANDLERS
 ========================================================= */
 function initialiseNavigationLinks() {
@@ -307,11 +301,19 @@ function initialiseMobileMenu() {
     if (!mobileMenu) return;
 
     /* Toggle open class */
-    mobileMenu.classList.toggle("open");
+    const isOpen = mobileMenu.classList.toggle("open");
+
+    /* Reflect state for assistive tech */
+    mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+    /* Update hamburger button aria-expanded */
+    const btn = document.querySelector('.mobile-menu-btn');
+    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
   };
 
 }
+
 
   /* =====================================================
      MOBILE RESOURCES DROPDOWN
@@ -371,6 +373,13 @@ function closeMobileMenu() {
   /* Remove open class */
   mobileMenu.classList.remove("open");
 
+  /* Reflect state for assistive tech */
+  mobileMenu.setAttribute('aria-hidden', 'true');
+
+  /* Update hamburger button aria-expanded */
+  const btn = document.querySelector('.mobile-menu-btn');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+
 }
 
 
@@ -397,20 +406,26 @@ function initialiseContactForm() {
     console.warn("Contact form button not found.");
     return;
   }
+  /* sanitizes input by stripping tags - safe for mailto body */
+  function sanitizeInput(str) {
+    if (!str) return "";
+    return String(str).replace(/<[^>]*>?/gm, '');
+  }
 
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", function (ev) {
+    ev.preventDefault();
 
     const emailInput  = document.getElementById("ct-email");
     const nameInput   = document.getElementById("ct-name");
     const reasonInput = document.getElementById("ct-reason");
     const msgInput    = document.getElementById("ct-message");
 
-    const email   = emailInput  ? emailInput.value.trim()  : "";
-    const name    = nameInput   ? nameInput.value.trim()   : "";
-    const reason  = reasonInput ? reasonInput.value        : "";
-    const message = msgInput    ? msgInput.value.trim()    : "";
+    const email   = emailInput  ? sanitizeInput(emailInput.value.trim())  : "";
+    const name    = nameInput   ? sanitizeInput(nameInput.value.trim())   : "";
+    const reason  = reasonInput ? sanitizeInput(reasonInput.value)        : "";
+    const message = msgInput    ? sanitizeInput(msgInput.value.trim())    : "";
 
-    /* Validate email */
+    /* Validate email presence */
     if (!email) {
       alert("Please enter your email address.");
       if (emailInput) emailInput.focus();
@@ -445,6 +460,7 @@ function initialiseContactForm() {
                  + "?subject=" + encodeURIComponent(subject)
                  + "&body="    + encodeURIComponent(body);
 
+    /* Use location assign to enable tests to stub window.location */
     window.location.href = mailto;
 
   });
