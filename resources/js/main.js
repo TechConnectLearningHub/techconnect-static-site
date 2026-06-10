@@ -254,109 +254,53 @@ function initialiseNavigationLinks() {
    MOBILE MENU INITIALISATION
 ========================================================= */
 function initialiseMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const toggleButtons = document.querySelectorAll("[data-mobile-menu-toggle]");
+  const closeLinks = document.querySelectorAll("[data-mobile-close]");
+  const dropdown = document.querySelector(".mobile-dropdown");
+  const dropdownToggle = document.querySelector(".mobile-dropdown-toggle");
 
-  /*
-    Toggle menu buttons:
-    - Hamburger icon
-    - Close icon
-  */
-  document.querySelectorAll(
-    "[data-mobile-menu-toggle]"
-  ).forEach((button) => {
+  if (!mobileMenu) return;
 
-    button.addEventListener("click", function () {
+  function openMobileMenu() {
+    mobileMenu.classList.add("open");
+    mobileMenu.setAttribute("aria-hidden", "false");
 
-      toggleMobileMenu();
+    const btn = document.querySelector(".mobile-menu-btn");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
 
-    });
+  window.closeMobileMenu = function () {
+    mobileMenu.classList.remove("open");
+    mobileMenu.setAttribute("aria-hidden", "true");
 
-  });
-
-  /*
-    Mobile menu navigation links
-    automatically close menu after click.
-  */
-  document.querySelectorAll(
-    "[data-mobile-close]"
-  ).forEach((link) => {
-
-    link.addEventListener("click", function () {
-
-      closeMobileMenu();
-
-    });
-
-  });
-
-  /* =====================================================
-     GLOBAL MENU TOGGLE FUNCTION
-  ===================================================== */
-  window.toggleMobileMenu = function () {
-
-    /* Find mobile menu */
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-    /* Stop if menu missing */
-    if (!mobileMenu) return;
-
-    /* Toggle open class */
-    const isOpen = mobileMenu.classList.toggle("open");
-
-    /* Reflect state for assistive tech */
-    mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-
-    /* Update hamburger button aria-expanded */
-    const btn = document.querySelector('.mobile-menu-btn');
-    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
+    const btn = document.querySelector(".mobile-menu-btn");
+    if (btn) btn.setAttribute("aria-expanded", "false");
   };
 
-}
+  window.toggleMobileMenu = function () {
+    if (mobileMenu.classList.contains("open")) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  };
 
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", toggleMobileMenu);
+  });
 
-  /* =====================================================
-     MOBILE RESOURCES DROPDOWN
-  ===================================================== */
-  /*
-    Handles:
-    - Expand / collapse
-    - Accordion animation
-    - Plus icon rotation
-  */
-  const mobileDropdown =
-    document.querySelector(".mobile-dropdown");
+  closeLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
 
-  const mobileDropdownToggle =
-    document.querySelector(".mobile-dropdown-toggle");
-
-  /*
-    Only initialise if dropdown exists
-  */
-  if (mobileDropdown && mobileDropdownToggle) {
-
-    mobileDropdownToggle.addEventListener(
-      "click",
-      function () {
-
-        /*
-          Toggle accordion open state
-        */
-        const isOpen =
-          mobileDropdown.classList.toggle("open");
-
-        /*
-          Update accessibility attribute
-        */
-        mobileDropdownToggle.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
-        );
-
-      }
-    );
-
+  if (dropdown && dropdownToggle) {
+    dropdownToggle.addEventListener("click", function () {
+      const isOpen = dropdown.classList.toggle("open");
+      dropdownToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
+}
 
 /* =========================================================
    CLOSE MOBILE MENU
