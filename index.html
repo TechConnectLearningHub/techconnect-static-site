@@ -136,7 +136,7 @@
   <!-- =====================================================
        HEADER / TOP NAVIGATION
   ====================================================== -->
-  <header>
+  <header role="banner">
 
     <div class="container nav">
 
@@ -362,8 +362,10 @@
   <!-- =====================================================
        MOBILE SIDE MENU
   ====================================================== -->
-    <div class="mobile-menu"
+    <nav class="mobile-menu"
       id="mobileMenu"
+      role="navigation"
+      aria-label="Mobile"
       aria-hidden="true">
 
     <!-- Close button -->
@@ -417,15 +419,15 @@
       </button>
 
       <div class="mobile-dropdown-menu"
-          id="mobileResourcesMenu">
+        id="mobileResourcesMenu">
 
-        <a href="./resources/pages/blog.html" data-mobile-close>Blogs</a>
-        <a href="./resources/pages/faq.html" data-mobile-close>FAQ</a>
-        <a href="./resources/blogs/cloud-computing.html" data-mobile-close>Cloud Computing</a>
-        <a href="./resources/blogs/mulesoft.html" data-mobile-close>MuleSoft</a>
-        <a href="./resources/blogs/api-integration.html" data-mobile-close>APIs & Integration</a>
+      <a href="./resources/pages/faq.html" data-mobile-close>FAQ</a>
+      <a href="./resources/pages/blog.html" data-mobile-close>Blog</a>
+      <a href="./resources/pages/learning-guides.html" data-mobile-close>Learning Guides</a>
+      <a href="./resources/pages/workshops.html" data-mobile-close>Workshops</a>
+      <a href="./resources/pages/community-resources.html" data-mobile-close>Community Resources</a>
 
-      </div>
+    </div>
 
     </div>
 
@@ -441,12 +443,12 @@
 
     </a>
 
-  </div>
+  </nav>
 
   <!-- =====================================================
        MAIN WEBSITE CONTENT
   ====================================================== -->
-  <main id="main-content">
+  <main id="main-content" role="main">
 
     <!-- ===============================================
          HERO SECTION / COVER IMAGE
@@ -570,7 +572,7 @@
   <!-- =====================================================
        FOOTER
   ====================================================== -->
-  <footer>
+  <footer role="contentinfo">
 
     <div class="container footer-inner">
 

@@ -486,6 +486,16 @@ h2 {
   gap: 24px;
 }
 
+@media (max-width: 768px) {
+  .areas-layout {
+    gap: 12px;
+  }
+
+  #areas .section-head {
+    margin-bottom: 0;
+  }
+}
+
 .areas {
   background: white;
   padding: 48px 0;
@@ -1151,16 +1161,20 @@ footer {
 
 .mobile-close {
   position: absolute;
-  top: 18px;
-  right: 20px;
+  top: 14px;
+  right: 16px;
   border: none;
   background: var(--primary-soft);
   color: var(--primary);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   font-size: 1.8rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 @media (max-width: 1100px) {
@@ -2042,14 +2056,13 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  animation: verticalEvents 12s linear infinite;
-  animation-delay: 0.3s;
-  animation-fill-mode: both;
-  animation-duration: 12000ms;
+  animation: verticalEvents 18s linear infinite;
 }
 
 .events-card-body {
-  height: 100px;
+  height: auto;
+  min-height: 80px;
+  max-height: 160px;
   padding: 12px 22px;
   overflow: hidden;
   position: relative;
@@ -2268,6 +2281,10 @@ footer {
     width: 100%;
     min-height: 0;
     border-radius: 0;
+  }
+  
+  section {
+    padding: 36px 0;
   }
 
   /* Keep the event pill inside the hero image on mobile */
@@ -3280,4 +3297,92 @@ footer {
   .hero-image {
     min-height: 0;
   }
+}
+/* Reduce mobile gap before Building Community Partnerships */
+@media (max-width: 768px) {
+  .partners {
+    padding-top: 36px;
+  }
+}
+@media (max-width: 768px) {
+  .events-card-body {
+    max-height: 220px;
+  }
+
+  .events-card-scroll span {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Fix 1: kill the gap between heading and events card */
+  .areas .professional-head {
+    margin-bottom: 16px;
+  }
+
+  /* Fix 2: remove the dead space at the top of the events card */
+  .events-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-card-body {
+    max-height: 240px;
+    padding: 0 22px 12px;
+  }
+
+  /* Fix 3: stop animation starting mid-list — reset to top */
+  .events-card-scroll {
+    animation-name: verticalEvents;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* Remove ALL padding/margin from card so header sits flush at top */
+  .events-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .events-card-header {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* Collapse the heading gap */
+  .areas .section-head {
+    margin-bottom: 12px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* Fix 1: close the heading-to-card gap */
+  #areas .section-head,
+  #areas .professional-head {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #areas .areas-layout {
+    gap: 12px !important;
+  }
+
+  /* Fix 2: clip card body to show only 1-2 items */
+  .events-card-body {
+    height: 80px !important;
+    max-height: 80px !important;
+    overflow: hidden !important;
+    padding: 12px 22px !important;
+  }
+
+  /* Fix 3: ensure animation runs */
+  .events-card-scroll {
+    animation: verticalEvents 18s linear infinite !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: none !important;
+  }
+
 }
