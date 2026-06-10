@@ -1178,7 +1178,12 @@ footer {
 }
 
 @media (max-width: 1100px) {
-  nav { display: none; }
+  header nav[aria-label="Primary"] {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
   .mobile-menu-btn {
     display: flex;
     align-items: center;

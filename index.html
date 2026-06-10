@@ -193,12 +193,10 @@
           - Values
           - Approach
           - Audience -->
-      <a href="#mission"
-        data-section="mission">
-
+      <a href="#mission" data-mobile-close data-section="mission">
         Why TechConnect
-
       </a>
+
 
       <!-- ===========================================
           EXPLORE SKILLS
@@ -333,14 +331,10 @@
       ================================================ -->
       <!-- Hamburger icon -->
       <button class="mobile-menu-btn"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          data-mobile-menu-toggle>
-
-        ☰
-
-      </button>
+        data-mobile-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Open menu">☰</button>
 
       <!-- ===============================================
            HEADER CTA BUTTON
@@ -370,13 +364,8 @@
 
     <!-- Close button -->
     <button class="mobile-close"
-            type="button"
-            aria-label="Close menu"
-            data-mobile-menu-toggle>
-
-      ×
-
-    </button>
+        data-mobile-menu-toggle
+        aria-label="Close menu">×</button>
 
     <!-- Primary mobile CTA -->
     <a href="https://www.instagram.com/thetechconnecthub/" target="_blank" rel="noopener" data-mobile-close>📸 Join Community</a>
