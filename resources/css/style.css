@@ -3391,3 +3391,196 @@ footer {
   }
 
 }
+/* =====================================================
+   FINAL MOBILE NAVIGATION FIX - v2
+   Purpose:
+   - Homepage: hide desktop nav, show hamburger drawer
+   - Resource pages: keep their simple top navigation visible
+   - Prevent mobile drawer Resources submenu links from becoming CTA buttons
+===================================================== */
+
+@media (max-width: 1100px) {
+  /* Homepage desktop navigation only */
+  header nav[aria-label="Primary"],
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Homepage mobile hamburger */
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  /* Keep homepage side drawer available */
+  .mobile-menu {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(86vw, 340px);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 9999;
+    background: #ffffff;
+    border-left: 1px solid var(--line);
+    box-shadow: -18px 0 40px rgba(15, 23, 42, 0.16);
+    padding: 76px 22px 28px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 14px 0;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 800;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-menu > a:first-of-type {
+    margin-bottom: 10px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border-bottom: none;
+    background: linear-gradient(135deg, #7a2ff0 0%, #ff3d5f 52%, #ff6b1a 100%);
+    color: #ffffff !important;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(249, 115, 22, 0.22);
+  }
+
+  .mobile-dropdown-menu a,
+  .mobile-dropdown-menu a:first-of-type {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--muted) !important;
+    text-align: left !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .mobile-dropdown:not(.open) .mobile-dropdown-menu {
+    max-height: 0;
+  }
+
+  .mobile-dropdown.open .mobile-dropdown-menu {
+    max-height: 420px;
+  }
+
+  /* Resource/static pages use plain header nav and need visible navigation */
+  header .nav > nav:not([aria-label="Primary"]):not(.mobile-menu),
+  .blog-nav {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Homepage mobile header: logo + hamburger only */
+  body:not(.blog-list-page):not(.blog-detail-page) header {
+    height: auto;
+    min-height: 68px;
+  }
+
+  body:not(.blog-list-page):not(.blog-detail-page) .nav {
+    min-height: 68px;
+    height: auto;
+    gap: 12px;
+  }
+
+  .brand {
+    min-width: auto;
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-title,
+  .brand-subtitle {
+    display: none !important;
+  }
+
+  .header-cta {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 1.45rem;
+  }
+
+  /* Resource/static pages: make top nav usable instead of hiding it */
+  header .nav > nav:not([aria-label="Primary"]):not(.mobile-menu) {
+    width: 100%;
+    display: flex !important;
+    gap: 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0 12px;
+    border-top: 1px solid var(--line);
+    scrollbar-width: none;
+  }
+
+  header .nav > nav:not([aria-label="Primary"]):not(.mobile-menu)::-webkit-scrollbar {
+    display: none;
+  }
+
+  header .nav > nav:not([aria-label="Primary"]):not(.mobile-menu) a {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  /* Blog/resource topbar pages */
+  .blog-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .blog-topbar-inner {
+    min-height: auto;
+    padding: 14px 0 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .blog-logo-image {
+    width: 42px;
+    height: 42px;
+  }
+
+  .blog-logo-text {
+    display: none !important;
+  }
+
+  .blog-nav {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  .blog-nav a {
+    padding: 6px 0;
+    white-space: nowrap;
+  }
+}
