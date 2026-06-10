@@ -112,7 +112,13 @@
        Largest Contentful Paint (LCP) performance -->
   <link rel="preload"
         as="image"
-        href="./resources/images/webp/techconnect-cover.webp" />
+        href="./resources/images/webp/techconnect-cover.webp"
+        media="(min-width: 769px)" />
+
+  <link rel="preload"
+        as="image"
+        href="./resources/images/webp/techconnect-mobile-hero.webp"
+        media="(max-width: 768px)" />
 
   <!-- =====================================================
        MAIN STYLESHEET
@@ -450,11 +456,24 @@
       <div class="hero-image"
        aria-label="TechConnect community learning cover image">
 
-    <div class="hero-launch-pill">
-      🚀 First Event Coming Soon
-    </div>
+        <picture class="hero-picture">
+          <source
+            media="(max-width: 768px)"
+            srcset="./resources/images/webp/techconnect-mobile-hero.webp" />
 
-  </div>
+          <img
+            src="./resources/images/webp/techconnect-cover.webp"
+            alt="TechConnect Learning Hub community learning cover image"
+            width="1600"
+            height="700"
+            fetchpriority="high" />
+        </picture>
+
+        <div class="hero-launch-pill">
+          🚀 First Event Coming Soon
+        </div>
+
+      </div>
 
   <div class="hero-action-bar">
 
